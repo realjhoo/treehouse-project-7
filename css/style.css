@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css?family=Exo:400,700");
+
+/* =-=-=-=-=-=-=-=-=-=-= GENERAL RULES =-=-=-=-=-=-=-=-=-=-=-=-= */
+* {
+   // box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family: "Exo", sans-serif;
+}
+
+a {
+   text-decoration: none;
+}
+
+p {
+   text-transform: uppercase;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   padding-left: 25px;
+   font-size: 0.9em;
+}
+
+/* =-=-=-=-=-=-=-=-=-=-= GRID CONTAINER =-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+.grid-container {
+   display: grid;
+   grid-auto-columns: 100px 1fr 1fr;
+   grid-auto-rows: auto;
+   grid-template-areas:
+      "head head head"
+      "nav tab search"
+      "nav chart1 chart1"
+      "nav chart2 chart3"
+      "nav socials socials"
+      "nav new-mems recent"
+      "nav message settings";
+}
+
+/* =-=-=-=-=-=-=-=-=-=-= GRID HEADER =-=-=-=-=-=-=-=-=-=-=-=-=-= */
+.header {
+   grid-area: head;
+   display: flex;
+   background-color: #7477bf;
+   height: 75px;
+   color: #ffffff;
+   font-size: 1.3em;
+}
+
+.header-maldekstra {
+   display: flex;
+   align-items: center;
+   padding-left: 0.5em;
+}
+
+.your {
+   font-weight: 800;
+   letter-spacing: 1.5px;
+}
+
+.trademark {
+   font-size: 0.7em;
+}
+
+.header-dekstra {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: flex-end;
+   align-items: center;
+   width: 86%;
+}
+
+.ico-bell {
+   height: 1em;
+   width: 1em;
+   margin-right: 10px;
+}
+
+.msg-dot {
+   font-size: 0.6em;
+   color: #7477bf;
+   background-color: #81c98f;
+   border-radius: 50%;
+   height: 18px;
+   width: 20px;
+   text-align: center;
+   margin-left: 8px;
+   margin-top: -38px;
+   z-index: 5;
+}
+
+hr {
+   width: 0px;
+   height: 2em;
+   border-left: 1px solid black;
+   margin-right: 15px;
+   margin-left: 15px;
+}
+
+.avatar {
+   height: 36px;
+   width: 36px;
+   border-radius: 50%;
+}
+
+.user-name {
+   font-size: 0.6em;
+   padding-left: 10px;
+}
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= NAV BAR =-=-=-=-=-=-=-=-=-=-= */
+.navbar {
+   grid-area: nav;
+   background-color: #4d4c72;
+   border-right: 1px solid #d8d8d7;
+   color: #ffffff;
+}
+
+.ico-dashboard,
+.ico-members,
+.ico-visits,
+.ico-settings {
+   display: flex;
+   height: 35px;
+   width: 35px;
+   margin-right: auto;
+   margin-left: auto;
+
+   margin-top: 15px;
+   margin-bottom: 35px;
+
+   opacity: 0.4;
+}
+
+.ico-dashboard:hover,
+.ico-members:hover,
+.ico-visits:hover,
+.ico-settings:hover {
+   opacity: 1;
+}
+
+/* =-=-=-=-=-=-=-=-=-=-= CHARTS =-=-=-=-=-=-=-=-=-=-=-= */
+.chart-options {
+   display: flex;
+   position: relative;
+   top: 2.2em;
+}
+.chart-selector {
+   display: flex;
+   justify-content: flex-end;
+   flex-wrap: nowrap;
+   align-items: center;
+   margin-right: 20px;
+   list-style-type: none;
+}
+
+.chart-selector li {
+   font-size: 0.75em;
+   font-weight: bold;
+   color: #666666;
+   letter-spacing: 1.3px;
+   background-color: #81c98f;
+   border-radius: 25px;
+   padding: 5px 10px 5px 10px;
+   margin-right: 10px;
+}
+
+.lineChart {
+   grid-area: chart1;
+   border: 1px solid #d8d8d7;
+   color: #666666;
+   width: 100%;
+   max-height: 230px;
+   margin-bottom: 80px;
+}
+
+.barChart {
+   grid-area: chart2;
+   background-color: #ffffff;
+   border: 1px solid #d8d8d7;
+   color: #666666;
+}
+
+.donutChart {
+   grid-area: chart3;
+   background-color: #ffffff;
+   border: 1px solid #d8d8d7;
+   color: #666666;
+}
+/* =-=-=-=-=-=-=-=-=-= END CHARTS -=-=-=-=-=-=-=-=-=-=-=-= */
+
+/* =-=-=-=-=-=-=-=-=-= SOCIAL STATS =-=-=-=-=-=-=-=-=-=-= */
+.social-stats {
+   grid-area: socials;
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: space-around;
+   border: 1px solid #d8d8d7;
+   color: #666666;
+   width: 100%;
+}
+
+/* THIS IS A PROBLEM */
+.stats {
+   width: 0px;
+   height: 0px;
+   padding-left: 0px;
+}
+
+.social-maldekstro,
+.social-mezo,
+.social-dekstro {
+   display: flex;
+   flex-direction: row-reverse;
+   justify-content: left;
+   border: 1px solid #d1d1d1;
+   background-color: #fbfbfb;
+   padding: 20px;
+   width: 100%;
+   margin-left: 20px;
+
+   margin-top: 4em;
+   margin-bottom: 4em;
+}
+
+.ico-twit,
+.ico-fb,
+.ico-goog {
+   width: 72px;
+   height: 72px;
+   fill: #fefefe;
+   padding: 15px;
+   background-color: #7377bf;
+   border-radius: 50%;
+}
+
+.new-members {
+   grid-area: new-mems;
+   background-color: #e2e3f6;
+   border: 1px solid #d8d8d7;
+   color: #666666;
+}
+
+.recent-activity {
+   grid-area: recent;
+   background-color: #e2e3f6;
+   border: 1px solid #d8d8d7;
+   color: #666666;
+}
+
+.message-user {
+   grid-area: message;
+   background-color: #e2e3f6;
+   border: 1px solid #d8d8d7;
+   color: #666666;
+}
+
+.settings {
+   grid-area: settings;
+   background-color: #e2e3f6;
+   border: 1px solid #d8d8d7;
+   color: #666666;
+}
+/* =-=-=-=-=-=-=-=-=-=-=-= END OF GRID ITEMS =-=-=-=-=-=-=-=-=-=-=-=-= */
+
+/* =-=-=-=-=-=-=-=-=-= TOGGLE SWITCH OVERRIDES =-=-=-=-=-=-=-=-=-=-= */
+.switch-ios.switch-light input:checked ~ span {
+   box-shadow: inset 0 0 0 30px #7477bf;
+}
+
+.switch-ios.switch-light input:checked ~ span a {
+   border-color: #666666;
+}
+
+.switch-ios.switch-light input:checked ~ span span:last-of-type,
+.switch-ios.switch-light span span {
+   text-transform: uppercase;
+}
+/*  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
