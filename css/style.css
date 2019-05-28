@@ -2,10 +2,14 @@
 
 /* =-=-=-=-=-=-=-=-=-=-= GENERAL RULES =-=-=-=-=-=-=-=-=-=-=-=-= */
 * {
-   // box-sizing: border-box;
+   box-sizing: border-box;
    margin: 0;
    padding: 0;
    font-family: "Exo", sans-serif;
+}
+
+body {
+   color: #666666;
 }
 
 a {
@@ -39,10 +43,10 @@ p {
 .header {
    grid-area: head;
    display: flex;
-   background-color: #7477bf;
    height: 75px;
-   color: #ffffff;
    font-size: 1.3em;
+   color: #ffffff;
+   background-color: #7477bf;
 }
 
 .header-maldekstra {
@@ -110,9 +114,9 @@ hr {
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= NAV BAR =-=-=-=-=-=-=-=-=-=-= */
 .navbar {
    grid-area: nav;
+   color: #ffffff;
    background-color: #4d4c72;
    border-right: 1px solid #d8d8d7;
-   color: #ffffff;
 }
 
 .ico-dashboard,
@@ -122,12 +126,7 @@ hr {
    display: flex;
    height: 35px;
    width: 35px;
-   margin-right: auto;
-   margin-left: auto;
-
-   margin-top: 15px;
-   margin-bottom: 35px;
-
+   margin: 15px auto 35px auto;
    opacity: 0.4;
 }
 
@@ -144,6 +143,7 @@ hr {
    position: relative;
    top: 2.2em;
 }
+
 .chart-selector {
    display: flex;
    justify-content: flex-end;
@@ -156,109 +156,172 @@ hr {
 .chart-selector li {
    font-size: 0.75em;
    font-weight: bold;
-   color: #666666;
    letter-spacing: 1.3px;
+   color: #666666;
+
    background-color: #81c98f;
-   border-radius: 25px;
    padding: 5px 10px 5px 10px;
+   border-radius: 25px;
+
    margin-right: 10px;
 }
 
 .lineChart {
    grid-area: chart1;
-   border: 1px solid #d8d8d7;
    color: #666666;
    width: 100%;
    max-height: 230px;
+   border: 1px solid #d8d8d7;
    margin-bottom: 80px;
 }
 
 .barChart {
    grid-area: chart2;
+   color: #666666;
    background-color: #ffffff;
    border: 1px solid #d8d8d7;
-   color: #666666;
 }
 
 .donutChart {
    grid-area: chart3;
-   background-color: #ffffff;
-   border: 1px solid #d8d8d7;
    color: #666666;
+   background-color: #ffffff;
+   padding-bottom: 1.2em;
+   border: 1px solid #d8d8d7;
 }
 /* =-=-=-=-=-=-=-=-=-= END CHARTS -=-=-=-=-=-=-=-=-=-=-=-= */
 
 /* =-=-=-=-=-=-=-=-=-= SOCIAL STATS =-=-=-=-=-=-=-=-=-=-= */
 .social-stats {
    grid-area: socials;
-   display: flex;
-   flex-wrap: nowrap;
-   justify-content: space-around;
+   display: grid;
+   grid-auto-columns: 1fr 1fr 1fr;
+   grid-template-areas:
+      "s-stats s-stats s-stats"
+      "s-maldekstro s-mezo s-dekstro";
+   grid-gap: 25px;
+   color: #7377bf;
+   padding-bottom: 3em;
    border: 1px solid #d8d8d7;
-   color: #666666;
-   width: 100%;
 }
 
-/* THIS IS A PROBLEM */
+/* The h2 title of this box */
 .stats {
-   width: 0px;
-   height: 0px;
-   padding-left: 0px;
+   grid-area: s-stats;
+   color: #666666;
+   margin-top: 1.2em;
+}
+
+/* The twitter box */
+.social-maldekstro {
+   grid-area: s-maldekstro;
+   margin-left: 1.4em;
+}
+
+/* the facebook box */
+.social-mezo {
+   grid-area: s-mezo;
+}
+
+/* the google box */
+.social-dekstro {
+   grid-area: s-dekstro;
+   margin-right: 1.4em;
 }
 
 .social-maldekstro,
 .social-mezo,
 .social-dekstro {
-   display: flex;
-   flex-direction: row-reverse;
-   justify-content: left;
-   border: 1px solid #d1d1d1;
+   display: grid;
+   grid-template-columns: 1fr 2fr;
+   grid-template-rows: auto;
+   grid-template-areas: "ico s-media s-media" "ico num num";
    background-color: #fbfbfb;
-   padding: 20px;
-   width: 100%;
-   margin-left: 20px;
-
-   margin-top: 4em;
-   margin-bottom: 4em;
+   border: 1px solid #d1d1d1;
 }
 
 .ico-twit,
 .ico-fb,
 .ico-goog {
+   grid-area: ico;
    width: 72px;
    height: 72px;
    fill: #fefefe;
-   padding: 15px;
    background-color: #7377bf;
    border-radius: 50%;
+   padding: 15px;
+   margin: 15px;
 }
 
+/* social media titles inside boxes */
+.social-media {
+   grid-area: s-media;
+   font-size: 1.2em;
+   margin-top: 20px;
+}
+
+/* number inside social media boxes */
+.num {
+   grid-area: num;
+   font-size: 2em;
+   font-weight: 400;
+   color: #666666;
+   margin-top: -15px;
+}
+/* =-=-=-=-=-=-=-=-=-= END OF SOCIAL STATS =-=-=-=-=-=-=-=-=-=-=-=-= */
 .new-members {
    grid-area: new-mems;
    background-color: #e2e3f6;
    border: 1px solid #d8d8d7;
-   color: #666666;
 }
 
 .recent-activity {
    grid-area: recent;
    background-color: #e2e3f6;
    border: 1px solid #d8d8d7;
-   color: #666666;
 }
 
+/* =-=-=-=-=-=-=-=-=-=-=-=-= MESSAGE USER =-=-=-=-=-=-=-=-=-=-=-= */
 .message-user {
    grid-area: message;
-   background-color: #e2e3f6;
    border: 1px solid #d8d8d7;
-   color: #666666;
 }
+
+.search-for-user,
+.message-to-user,
+.btn-send {
+   font-size: 1em;
+   background-color: #fbfbfb;
+   width: 85%;
+   padding: 0.5em 0 0.5em 1em;
+   border-radius: 5px;
+   border: 1px solid #d1d1d1;
+   margin: 0.4em 0 0.4em 1.5em;
+}
+
+::placeholder {
+   color: #bbbbbb;
+}
+
+.message-to-user {
+   height: 120px;
+   margin-bottom: 0.4em;
+   resize: none;
+}
+
+.btn-send {
+   text-transform: uppercase;
+   color: #ffffff;
+   background-color: #7377bf;
+   padding-left: 0;
+   margin-bottom: 50px;
+}
+/* =-=-=-=-=-=-=-=-=-=-=-=-= END OF MESSAGE USER =-=-=-=-=-=-=-=-=-= */
 
 .settings {
    grid-area: settings;
    background-color: #e2e3f6;
    border: 1px solid #d8d8d7;
-   color: #666666;
 }
 /* =-=-=-=-=-=-=-=-=-=-=-= END OF GRID ITEMS =-=-=-=-=-=-=-=-=-=-=-=-= */
 
