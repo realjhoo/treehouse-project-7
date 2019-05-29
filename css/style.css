@@ -32,6 +32,7 @@ p {
    grid-template-areas:
       "head head head"
       "nav tab search"
+      "nav alert alert"
       "nav chart1 chart1"
       "nav chart2 chart3"
       "nav socials socials"
@@ -137,6 +138,37 @@ hr {
    opacity: 1;
 }
 
+/* =-=-=-=-=-=-=-=-=-=-= ALERT BAR =-=-=-=-=-=-=-=-=-=-= */
+
+.alert-bar {
+   grid-area: alert;
+   font-size: 0.9em;
+   color: #ffffff;
+   background-color: #7377bf;
+   vertical-align: middle;
+   line-height: 38px;
+   padding-left: 12px;
+   padding-right: 12px;
+   border-radius: 5px;
+   margin-left: 20px;
+   margin-right: 20px;
+}
+
+.alert {
+   font-size: 0.9em;
+   font-weight: bold;
+}
+
+.close-btn {
+   float: right;
+   font-size: 2em;
+   cursor: default;
+}
+
+.close-btn:hover {
+   color: #b2b1b2;
+}
+
 /* =-=-=-=-=-=-=-=-=-=-= CHARTS =-=-=-=-=-=-=-=-=-=-=-= */
 .chart-options {
    display: flex;
@@ -171,7 +203,7 @@ hr {
    color: #666666;
    width: 100%;
    max-height: 230px;
-   border: 1px solid #d8d8d7;
+   /* border: 1px solid #d8d8d7; */
    margin-bottom: 80px;
 }
 
@@ -293,6 +325,7 @@ hr {
    font-size: 1em;
    background-color: #fbfbfb;
    width: 85%;
+   outline: none;
    padding: 0.5em 0 0.5em 1em;
    border-radius: 5px;
    border: 1px solid #d1d1d1;
@@ -320,8 +353,149 @@ hr {
 
 .settings {
    grid-area: settings;
-   background-color: #e2e3f6;
    border: 1px solid #d8d8d7;
+}
+
+.switch-wrapper {
+   display: grid;
+   grid-auto-columns: 200px 1fr;
+   grid-template-areas:
+      "label1  switch1"
+      "label2   switch2";
+}
+.onoffswitch {
+   grid-area: "switch1";
+}
+
+.onoffswitch2 {
+   grid-area: "switch2";
+}
+
+.switch-label-1 {
+   grid-area: "label1";
+}
+
+.switch-label-2 {
+   grid-area: "label2";
+}
+
+.switch-label-1,
+.switch-label-2 {
+   font-size: 14px;
+   margin-left: 12px;
+   padding-top: 8px;
+   padding-left: 1em;
+   margin-bottom: 2.7em;
+}
+
+.onoffswitch,
+.onoffswitch2 {
+   position: relative;
+   width: 90px;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+}
+
+.onoffswitch-checkbox,
+.onoffswitch-checkbox2 {
+   display: none;
+}
+.onoffswitch-label,
+.onoffswitch-label2 {
+   display: block;
+   overflow: hidden;
+   cursor: pointer;
+   border: 2px solid #999999;
+   border-radius: 20px;
+}
+.onoffswitch-inner,
+.onoffswitch-inner2 {
+   display: block;
+   width: 200%;
+   margin-left: -100%;
+   transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before,
+.onoffswitch-inner:after,
+.onoffswitch-inner2:before,
+.onoffswitch-inner2:after {
+   display: block;
+   float: left;
+   width: 50%;
+   height: 30px;
+   padding: 0;
+   line-height: 30px;
+   font-size: 14px;
+   color: white;
+   font-weight: bold;
+   box-sizing: border-box;
+}
+.onoffswitch-inner:before,
+.onoffswitch-inner2:before {
+   content: "ON";
+   padding-left: 10px;
+   background-color: #7377bf;
+   color: #ffffff;
+}
+.onoffswitch-inner:after,
+.onoffswitch-inner2:after {
+   content: "OFF";
+   padding-right: 10px;
+   background-color: #eeeeee;
+   color: #999999;
+   text-align: right;
+}
+.onoffswitch-switch,
+.onoffswitch-switch2 {
+   display: block;
+   width: 18px;
+   margin: 6px;
+   background: #ffffff;
+   position: absolute;
+   top: 0;
+   /* BOTTOM MUST MATCH MARGIN-BOTTOM in switch-label rule to remain round */
+   bottom: 2em;
+   right: 56px;
+   border: 2px solid #999999;
+   border-radius: 22px;
+   transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner,
+.onoffswitch-checkbox2:checked + .onoffswitch-label2 .onoffswitch-inner2 {
+   margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch,
+.onoffswitch-checkbox2:checked + .onoffswitch-label2 .onoffswitch-switch2 {
+   right: 0px;
+}
+
+.timezone {
+   font-size: 0.7em;
+   background-color: #fbfbfb;
+   width: 85%;
+   height: 2.8em;
+   outline: none;
+   border-radius: 5px;
+   margin: 1.4em 0 0.4em 1.5em;
+}
+
+.btn-save,
+.btn-cancel {
+   font-size: 1em;
+   color: #ffffff;
+   background-color: #7377bf;
+   text-transform: uppercase;
+   width: 40%;
+   padding-top: 8px;
+   padding-bottom: 8px;
+   border-radius: 5px;
+   margin-top: 0.8em;
+   margin-left: 1.1em;
+}
+
+.btn-cancel {
+   background-color: #b2b1b2;
 }
 /* =-=-=-=-=-=-=-=-=-=-=-= END OF GRID ITEMS =-=-=-=-=-=-=-=-=-=-=-=-= */
 
