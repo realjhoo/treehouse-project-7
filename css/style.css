@@ -150,6 +150,7 @@ hr {
    padding-left: 12px;
    padding-right: 12px;
    border-radius: 5px;
+   margin-top: 12px;
    margin-left: 20px;
    margin-right: 20px;
 }
@@ -167,6 +168,52 @@ hr {
 
 .close-btn:hover {
    color: #b2b1b2;
+}
+
+/* =-=-=-=-=-=-=-=-=-= TAB and SEARCH =-=-=-=-=-=-=-=-= */
+
+.tab-wrapper {
+   display: flex;
+   background-color: #fbfbfb;
+   border-bottom: 1px solid #b2b1b2;
+}
+
+.tab {
+   grid-area: "tab";
+   font-size: 1.2em;
+   height: 3em;
+   line-height: 3em;
+   background-color: white;
+   padding-left: 1em;
+   border-right: 1px solid #b2b1b2;
+   border-bottom: 5px dashed red;
+   width: 30%;
+}
+
+.search {
+   grid-area: "search";
+   line-height: 3em;
+   background-color: #fbfbfb;
+   border-bottom: 1px solid #b2b1b2;
+}
+
+.inpt-search {
+   position: absolute;
+   left: calc(100% - 320px);
+   height: 2.8em;
+   line-height: 2.8em;
+   width: 300px;
+   font-size: 1em;
+   background-image: url("/images/mag-glass.png");
+   background-size: 18px;
+   background-repeat: no-repeat;
+   background-position: right;
+   background-position-x: calc(100% - 10px);
+   outline: none;
+   padding-left: 12px;
+   border: 1px solid #dbdbdb;
+   border-radius: 5px;
+   margin-top: 6px;
 }
 
 /* =-=-=-=-=-=-=-=-=-=-= CHARTS =-=-=-=-=-=-=-=-=-=-=-= */

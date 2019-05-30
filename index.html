@@ -1,152 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Treehouse FEWD Project 7</title>
 
-      <link rel="stylesheet" href="css/style.css" />
-   </head>
-   <body>
-      <div class="grid-container">
-         <div class="header">
-            <!--  LEFT SIDE -->
-            <span class="header-maldekstra">
-               <span class="your">Your</span>App
-               <sup class="trademark">&trade;</sup>
-            </span>
-            <!-- RIGHT SIDE -->
-            <div class="header-dekstra">
-               <!-- Notification Bell -->
-               <a href="#">
-                  <svg
-                     class="ico-bell"
-                     id="ico-bell-svg"
-                     viewBox="0 0 32 32"
-                     preserveAspectRatio="xMidYMid meet"
-                  >
-                     <path
-                        d="M24 18v-8c0-5.5-4.5-10-10-10S4 4.5 4 10v8l-4 8h9.1c0.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H28L24 18zM14 28c-1.3 0-2.4-0.8-2.8-2h5.6C16.4 27.2 15.3 28 14 28zM3 24l3-6v-8c0-4.4 3.6-8 8-8s8 3.6 8 8v8l3 6H3z"
-                        fill="#ffffff"
-                     />
-                  </svg>
-                  <!-- message indicator -->
-                  <div class="msg-dot">2</div>
-               </a>
-               <!-- DIVIDER LINE -->
-               <hr />
-               <!-- AVATAR -->
-               <img class="avatar" src="images/jhoo.jpg" alt="Real JHoo" />
-               <!-- MEMBER NAME -->
-               <p class="user-name">Jerry L Hoover</p>
-            </div>
-            <!-- end header-dekstra -->
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Treehouse FEWD Project 7</title>
 
-         </div>
-         <!-- end header -->
-         <!-- alert bar -->
-         <div class="alert-bar"><span class="alert"> Alert!</span> La bovinoj mortas, la parencoj mortas, vi ankaŭ mortas, sed famo vivas eterne.
-         <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
-         </div>
+   <link rel="stylesheet" href="css/style.css" />
+</head>
 
-         <div class="navbar">
-            <!-- NAVIGATION BAR-->
-
+<body>
+   <div class="grid-container">
+      <div class="header">
+         <!--  LEFT SIDE -->
+         <span class="header-maldekstra">
+            <span class="your">Your</span>App
+            <sup class="trademark">&trade;</sup>
+         </span>
+         <!-- RIGHT SIDE -->
+         <div class="header-dekstra">
+            <!-- Notification Bell -->
             <a href="#">
-               <img
-                  class="ico-dashboard"
-                  src="icons/icon-dashboard.svg"
-                  alt="Dashboard"
-               />
-            </a>
-            <a href="#">
-               <img
-                  class="ico-members"
-                  src="icons/icon-members.svg"
-                  alt="Members"
-               />
-            </a>
-            <a href="#"
-               ><img class="ico-visits" src="icons/icon-visits.svg" alt="Visits"
-            /></a>
-            <a href="#">
-               <img
-                  class="ico-settings"
-                  src="icons/icon-settings.svg"
-                  alt="Settings"
-               />
-            </a>
-         </div>
-         <!-- END NAV BAR -->
-         <!-- TAB AND SEARCH -->
-         <div class="tab">Dashboard</div>
-
-         <div class="search">Search <input type="text" /></div>
-         <!-- END TAB AND SEARCH -->
-         <div class="lineChart">
-            <!-- LINE CHART -->
-            <p class="chart-options">Traffic</p>
-
-            <ul class="chart-selector">
-               <li>Hourly</li>
-               <li>Daily</li>
-               <li>Weekly</li>
-               <li>Monthly</li>
-            </ul>
-
-            <canvas id="lineChart"></canvas>
-         </div>
-
-         <div class="barChart">
-            <!-- BAR CHART -->
-            <p>
-               Daily Traffic
-            </p>
-            <canvas id="barChart"></canvas>
-         </div>
-
-         <div class="donutChart">
-            <!-- DONUT CHART -->
-            <p>
-               Mobile Users
-            </p>
-            <canvas id="donutChart"></canvas>
-         </div>
-         <!-- END OF CHARTS -->
-
-         <!-- =-=-=-=-=-=-=-= SOCIAL MEDIA BOXES =-=-=-=-=-=-=-=-= -->
-         <div class="social-stats">
-            <p class="stats">Social Stats</p>
-
-            <span class="social-maldekstro">
-               <svg class="ico-twit" viewBox="-5 -2 41 28">
-                  >
+               <svg class="ico-bell" id="ico-bell-svg" viewBox="0 0 32 32" preserveAspectRatio="xMidYMid meet">
                   <path
-                     d="M32,3.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6C25.8,0.8,24,0,22.2,0
+                     d="M24 18v-8c0-5.5-4.5-10-10-10S4 4.5 4 10v8l-4 8h9.1c0.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H28L24 18zM14 28c-1.3 0-2.4-0.8-2.8-2h5.6C16.4 27.2 15.3 28 14 28zM3 24l3-6v-8c0-4.4 3.6-8 8-8s8 3.6 8 8v8l3 6H3z"
+                     fill="#ffffff" />
+               </svg>
+               <!-- message indicator -->
+               <div class="msg-dot">2</div>
+            </a>
+            <!-- DIVIDER LINE -->
+            <hr />
+            <!-- AVATAR -->
+            <img class="avatar" src="images/jhoo.jpg" alt="Real JHoo" />
+            <!-- MEMBER NAME -->
+            <p class="user-name">Jerry L Hoover</p>
+         </div>
+         <!-- end header-dekstra -->
+      </div>
+      <!-- end header -->
+
+      <!-- alert bar -->
+      <div class="alert-bar"><span class="alert"> Alert!</span> La bovinoj mortas, la parencoj mortas, vi ankaŭ mortas,
+         sed famo vivas eterne.
+         <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+      </div>
+
+      <div class="navbar">
+
+         <!-- NAVIGATION BAR-->
+         <a href="#">
+            <img class="ico-dashboard" src="icons/icon-dashboard.svg" alt="Dashboard" />
+         </a>
+         <a href="#">
+            <img class="ico-members" src="icons/icon-members.svg" alt="Members" />
+         </a>
+         <a href="#"><img class="ico-visits" src="icons/icon-visits.svg" alt="Visits" /></a>
+         <a href="#">
+            <img class="ico-settings" src="icons/icon-settings.svg" alt="Settings" />
+         </a>
+      </div>
+      <!-- END NAV BAR -->
+      <!-- TAB AND SEARCH -->
+      <div class="tab-wrapper">
+         <div class="tab">Dashboard</div>
+      </div>
+      <div class="search"> <input class="inpt-search" type="search" placeholder="Search" />
+      </div>
+      <!-- END TAB AND SEARCH -->
+      <div class="lineChart">
+         <!-- LINE CHART -->
+         <p class="chart-options">Traffic</p>
+
+         <ul class="chart-selector">
+            <li>Hourly</li>
+            <li>Daily</li>
+            <li>Weekly</li>
+            <li>Monthly</li>
+         </ul>
+
+         <canvas id="lineChart"></canvas>
+      </div>
+
+      <div class="barChart">
+         <!-- BAR CHART -->
+         <p>
+            Daily Traffic
+         </p>
+         <canvas id="barChart"></canvas>
+      </div>
+
+      <div class="donutChart">
+         <!-- DONUT CHART -->
+         <p>
+            Mobile Users
+         </p>
+         <canvas id="donutChart"></canvas>
+      </div>
+      <!-- END OF CHARTS -->
+
+      <!-- =-=-=-=-=-=-=-= SOCIAL MEDIA BOXES =-=-=-=-=-=-=-=-= -->
+      <div class="social-stats">
+         <p class="stats">Social Stats</p>
+
+         <span class="social-maldekstro">
+            <svg class="ico-twit" viewBox="-5 -2 41 28">
+               >
+               <path d="M32,3.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6C25.8,0.8,24,0,22.2,0
                	c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5C10.3,7.8,5.5,5.2,2.2,1.2c-0.6,1-0.9,2.1-0.9,3.3c0,2.3,1.2,4.3,2.9,5.5
                	c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1
                	c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,3,10.1,3c12.1,0,18.7-10,18.7-18.7
-               	c0-0.3,0-0.6,0-0.8C30,5.6,31.1,4.4,32,3.1z"
-                  />
-               </svg>
-               <h2 class="social-media">Twitter</h2>
-               <h2 class="num">10,345</h2>
-            </span>
+               	c0-0.3,0-0.6,0-0.8C30,5.6,31.1,4.4,32,3.1z" />
+            </svg>
+            <h2 class="social-media">Twitter</h2>
+            <h2 class="num">10,345</h2>
+         </span>
 
-            <span class="social-mezo">
-               <svg class="ico-fb" viewBox="0 0 56.693 56.693">
-                  <path
-                     d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"
-                  />
-               </svg>
-               <h2 class="social-media">Facebook</h2>
-               <h2 class="num">8,739</h2>
-            </span>
+         <span class="social-mezo">
+            <svg class="ico-fb" viewBox="0 0 56.693 56.693">
+               <path
+                  d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z" />
+            </svg>
+            <h2 class="social-media">Facebook</h2>
+            <h2 class="num">8,739</h2>
+         </span>
 
-            <span class="social-dekstro">
-               <svg class="ico-goog" viewBox="-4 0 41 32">
-                  <path
-                     d="M17.7,25.7c0-0.3,0-0.5-0.1-0.8c-0.1-0.2-0.1-0.5-0.2-0.7c-0.1-0.2-0.2-0.4-0.3-0.7c-0.2-0.2-0.3-0.4-0.4-0.6
+         <span class="social-dekstro">
+            <svg class="ico-goog" viewBox="-4 0 41 32">
+               <path d="M17.7,25.7c0-0.3,0-0.5-0.1-0.8c-0.1-0.2-0.1-0.5-0.2-0.7c-0.1-0.2-0.2-0.4-0.3-0.7c-0.2-0.2-0.3-0.4-0.4-0.6
                	c-0.1-0.2-0.3-0.3-0.5-0.6c-0.2-0.2-0.4-0.4-0.5-0.5c-0.1-0.1-0.3-0.3-0.6-0.5c-0.3-0.2-0.5-0.4-0.6-0.4s-0.3-0.2-0.6-0.4
                	c-0.3-0.2-0.5-0.4-0.6-0.4c-0.2,0-0.5,0-1,0c-0.7,0-1.4,0-2,0.1c-0.7,0.1-1.4,0.2-2.1,0.5c-0.7,0.2-1.3,0.5-1.9,0.9s-1,0.8-1.3,1.4
                	c-0.3,0.6-0.5,1.3-0.5,2.1c0,0.9,0.2,1.7,0.7,2.3c0.5,0.7,1.1,1.2,1.8,1.6s1.5,0.7,2.3,0.9s1.6,0.3,2.4,0.3c0.8,0,1.5-0.1,2.2-0.2
@@ -161,160 +142,148 @@
                	c0.4-0.8,1-1.5,1.8-2.1c0.8-0.6,1.8-1.1,2.8-1.4c1-0.3,2-0.5,3-0.7c0.9-0.1,1.9-0.2,2.9-0.3c-0.8-1.1-1.2-2-1.2-2.9
                	c0-0.2,0-0.3,0-0.5c0-0.1,0.1-0.3,0.1-0.4c0-0.1,0.1-0.2,0.2-0.4c0.1-0.2,0.1-0.3,0.1-0.4c-0.5,0.1-1,0.1-1.3,0.1
                	c-1.9,0-3.5-0.6-4.9-1.9c-1.4-1.3-2-2.8-2-4.7c0-1.8,0.6-3.4,1.8-4.8C6,1.7,7.5,0.8,9.3,0.4C10.5,0.1,11.7,0,12.9,0z M32.8,4.9v2.5
-               	h-4.9v4.9h-2.5V7.4h-4.9V4.9h4.9V0h2.5v4.9H32.8z"
-                  />
-               </svg>
-               <h2 class="social-media">Google+</h2>
-               <h2 class="num">2,530</h2>
-            </span>
-         </div>
-         <!-- =-=-=-=-=-=- SOCIAL MEDIA ENDS =-=-=-=-=-=-=-=-=-=-=-= -->
-
-         <!-- =-=-=-=-=-=-= NEW MEMBERS =-=-=-=-=-=-=-=-=-=-=-=-=-= -->
-         <div class="new-members">New Members</div>
-
-         <div class="recent-activity">Recent Activity</div>
-
-         <!-- =-=-=-=-=-=-=-=-=-= MESSAGE USER =-=-=-=-=-=-=-=-=-=-= -->
-         <div class="message-user">
-            <p>Message User</p>
-            <input
-               class="search-for-user"
-               type="text"
-               placeholder="Search for User"
-            />
-            <textarea
-               class="message-to-user"
-               rows="10"
-               placeholder="Message for User"
-            ></textarea>
-            <button class="btn-send">Send</button>
-         </div>
-         <!-- =-=-=-=-=-=-= SETTINGS =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
-         <div class="settings">
-            <p>
-               Settings
-            </p>
-
-            <!-- TOGGLE SWITCH -->
-      <div class="switch-wrapper">
-         <label class="switch-label-1" for="onoffswitch">Send Email Notifications</label>
-         <div class="onoffswitch">
-
-            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-            <label class="onoffswitch-label" for="myonoffswitch">
-               <span class="onoffswitch-inner"></span>
-               <span class="onoffswitch-switch"></span>
-            </label>
-         </div>
-
-         <label class="switch-label-2" for="onoffswitch2">Set Profile to Public</label>
-         <div class="onoffswitch2">
-            <input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox2" id="myonoffswitch2" checked>
-            <label class="onoffswitch-label2" for="myonoffswitch2">
-               <span class="onoffswitch-inner2"></span>
-               <span class="onoffswitch-switch2"></span>
-            </label>
-         </div>
+               	h-4.9v4.9h-2.5V7.4h-4.9V4.9h4.9V0h2.5v4.9H32.8z" />
+            </svg>
+            <h2 class="social-media">Google+</h2>
+            <h2 class="num">2,530</h2>
+         </span>
       </div>
+      <!-- =-=-=-=-=-=- SOCIAL MEDIA ENDS =-=-=-=-=-=-=-=-=-=-=-= -->
 
-            <select class="timezone"
-               name="timezone"
-               id="timezones"
-               placeholder="Select Timezone"
+      <!-- =-=-=-=-=-=-= NEW MEMBERS =-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+      <div class="new-members">New Members</div>
 
-                name="timezone">
-   <option value="" disabled selected>Select Timezone</option>
-   <option value="Etc/GMT+12">(GMT-12:00) International Date Line West</option>
-   <option value="Pacific/Midway">(GMT-11:00) Midway Island, Samoa</option>
-   <option value="Pacific/Honolulu">(GMT-10:00) Hawaii</option>
-   <option value="US/Alaska">(GMT-09:00) Alaska</option>
-   <option value="America/Los_Angeles">(GMT-08:00) Pacific Time (US & Canada)</option>
-   <option value="America/Tijuana">(GMT-08:00) Tijuana, Baja California</option>
-   <option value="US/Arizona">(GMT-07:00) Arizona</option>
-   <option value="America/Chihuahua">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
-   <option value="US/Mountain">(GMT-07:00) Mountain Time (US & Canada)</option>
-   <option value="America/Managua">(GMT-06:00) Central America</option>
-   <option value="US/Central">(GMT-06:00) Central Time (US & Canada)</option>
-   <option value="America/Mexico_City">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
-   <option value="Canada/Saskatchewan">(GMT-06:00) Saskatchewan</option>
-   <option value="America/Bogota">(GMT-05:00) Bogota, Lima, Quito, Rio Branco</option>
-   <option value="US/Eastern">(GMT-05:00) Eastern Time (US & Canada)</option>
-   <option value="US/East-Indiana">(GMT-05:00) Indiana (East)</option>
-   <option value="Canada/Atlantic">(GMT-04:00) Atlantic Time (Canada)</option>
-   <option value="America/Caracas">(GMT-04:00) Caracas, La Paz</option>
-   <option value="America/Manaus">(GMT-04:00) Manaus</option>
-   <option value="America/Santiago">(GMT-04:00) Santiago</option>
-   <option value="Canada/Newfoundland">(GMT-03:30) Newfoundland</option>
-   <option value="America/Sao_Paulo">(GMT-03:00) Brasilia</option>
-   <option value="America/Argentina/Buenos_Aires">(GMT-03:00) Buenos Aires, Georgetown</option>
-   <option value="America/Godthab">(GMT-03:00) Greenland</option>
-   <option value="America/Montevideo">(GMT-03:00) Montevideo</option>
-   <option value="America/Noronha">(GMT-02:00) Mid-Atlantic</option>
-   <option value="Atlantic/Cape_Verde">(GMT-01:00) Cape Verde Is.</option>
-   <option value="Atlantic/Azores">(GMT-01:00) Azores</option>
-   <option value="Africa/Casablanca">(GMT+00:00) Casablanca, Monrovia, Reykjavik</option>
-   <option value="Etc/Greenwich">(GMT+00:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London</option>
-   <option value="Europe/Amsterdam">(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
-   <option value="Europe/Belgrade">(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option>
-   <option value="Europe/Brussels">(GMT+01:00) Brussels, Copenhagen, Madrid, Paris</option>
-   <option value="Europe/Sarajevo">(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option>
-   <option value="Africa/Lagos">(GMT+01:00) West Central Africa</option>
-   <option value="Asia/Amman">(GMT+02:00) Amman</option>
-   <option value="Europe/Athens">(GMT+02:00) Athens, Bucharest, Istanbul</option>
-   <option value="Asia/Beirut">(GMT+02:00) Beirut</option>
-   <option value="Africa/Cairo">(GMT+02:00) Cairo</option>
-   <option value="Africa/Harare">(GMT+02:00) Harare, Pretoria</option>
-   <option value="Europe/Helsinki">(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option>
-   <option value="Asia/Jerusalem">(GMT+02:00) Jerusalem</option>
-   <option value="Europe/Minsk">(GMT+02:00) Minsk</option>
-   <option value="Africa/Windhoek">(GMT+02:00) Windhoek</option>
-   <option value="Asia/Kuwait">(GMT+03:00) Kuwait, Riyadh, Baghdad</option>
-   <option value="Europe/Moscow">(GMT+03:00) Moscow, St. Petersburg, Volgograd</option>
-   <option value="Africa/Nairobi">(GMT+03:00) Nairobi</option>
-   <option value="Asia/Tbilisi">(GMT+03:00) Tbilisi</option>
-   <option value="Asia/Tehran">(GMT+03:30) Tehran</option>
-   <option value="Asia/Muscat">(GMT+04:00) Abu Dhabi, Muscat</option>
-   <option value="Asia/Baku">(GMT+04:00) Baku</option>
-   <option value="Asia/Yerevan">(GMT+04:00) Yerevan</option>
-   <option value="Asia/Kabul">(GMT+04:30) Kabul</option>
-   <option value="Asia/Yekaterinburg">(GMT+05:00) Yekaterinburg</option>
-   <option value="Asia/Karachi">(GMT+05:00) Islamabad, Karachi, Tashkent</option>
-   <option value="Asia/Calcutta">(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi</option>
-   <option value="Asia/Calcutta">(GMT+05:30) Sri Jayawardenapura</option>
-   <option value="Asia/Katmandu">(GMT+05:45) Kathmandu</option>
-   <option value="Asia/Almaty">(GMT+06:00) Almaty, Novosibirsk</option>
-   <option value="Asia/Dhaka">(GMT+06:00) Astana, Dhaka</option>
-   <option value="Asia/Rangoon">(GMT+06:30) Yangon (Rangoon)</option>
-   <option value="Asia/Bangkok">(GMT+07:00) Bangkok, Hanoi, Jakarta</option>
-   <option value="Asia/Krasnoyarsk">(GMT+07:00) Krasnoyarsk</option>
-   <option value="Asia/Hong_Kong">(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
-   <option value="Asia/Kuala_Lumpur">(GMT+08:00) Kuala Lumpur, Singapore</option>
-   <option value="Asia/Irkutsk">(GMT+08:00) Irkutsk, Ulaan Bataar</option>
-   <option value="Australia/Perth">(GMT+08:00) Perth</option>
-   <option value="Asia/Taipei">(GMT+08:00) Taipei</option>
-   <option value="Asia/Tokyo">(GMT+09:00) Osaka, Sapporo, Tokyo</option>
-   <option value="Asia/Seoul">(GMT+09:00) Seoul</option>
-   <option value="Asia/Yakutsk">(GMT+09:00) Yakutsk</option>
-   <option value="Australia/Adelaide">(GMT+09:30) Adelaide</option>
-   <option value="Australia/Darwin">(GMT+09:30) Darwin</option>
-   <option value="Australia/Brisbane">(GMT+10:00) Brisbane</option>
-   <option value="Australia/Canberra">(GMT+10:00) Canberra, Melbourne, Sydney</option>
-   <option value="Australia/Hobart">(GMT+10:00) Hobart</option>
-   <option value="Pacific/Guam">(GMT+10:00) Guam, Port Moresby</option>
-   <option value="Asia/Vladivostok">(GMT+10:00) Vladivostok</option>
-   <option value="Asia/Magadan">(GMT+11:00) Magadan, Solomon Is., New Caledonia</option>
-   <option value="Pacific/Auckland">(GMT+12:00) Auckland, Wellington</option>
-   <option value="Pacific/Fiji">(GMT+12:00) Fiji, Kamchatka, Marshall Is.</option>
-   <option value="Pacific/Tongatapu">(GMT+13:00) Nuku'alofa</option>
-</selec>
-            </select>
-            <button class="btn-save">Save</button>
-            <button class="btn-cancel">Cancel</button>
-         </div>
-         <!-- =-=-=-=-=-=-=-= END SETTINGS =-=-=-=-=-=-= -->
+      <div class="recent-activity">Recent Activity</div>
+
+      <!-- =-=-=-=-=-=-=-=-=-= MESSAGE USER =-=-=-=-=-=-=-=-=-=-= -->
+      <div class="message-user">
+         <p>Message User</p>
+         <input class="search-for-user" type="text" placeholder="Search for User" />
+         <textarea class="message-to-user" rows="10" placeholder="Message for User"></textarea>
+         <button class="btn-send">Send</button>
       </div>
-   </body>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
-   <script type="text/javascript" src="js/app.js"></script>
+      <!-- =-=-=-=-=-=-= SETTINGS =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+      <div class="settings">
+         <p>
+            Settings
+         </p>
+
+         <!-- TOGGLE SWITCH -->
+         <div class="switch-wrapper">
+            <label class="switch-label-1" for="onoffswitch">Send Email Notifications</label>
+            <div class="onoffswitch">
+
+               <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+               <label class="onoffswitch-label" for="myonoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
+               </label>
+            </div>
+
+            <label class="switch-label-2" for="onoffswitch2">Set Profile to Public</label>
+            <div class="onoffswitch2">
+               <input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox2" id="myonoffswitch2" checked>
+               <label class="onoffswitch-label2" for="myonoffswitch2">
+                  <span class="onoffswitch-inner2"></span>
+                  <span class="onoffswitch-switch2"></span>
+               </label>
+            </div>
+         </div>
+
+         <select class="timezone" name="timezone" id="timezones" placeholder="Select Timezone" name="timezone">
+            <option value="" disabled selected>Select Timezone</option>
+            <option value="Etc/GMT+12">(GMT-12:00) International Date Line West</option>
+            <option value="Pacific/Midway">(GMT-11:00) Midway Island, Samoa</option>
+            <option value="Pacific/Honolulu">(GMT-10:00) Hawaii</option>
+            <option value="US/Alaska">(GMT-09:00) Alaska</option>
+            <option value="America/Los_Angeles">(GMT-08:00) Pacific Time (US & Canada)</option>
+            <option value="America/Tijuana">(GMT-08:00) Tijuana, Baja California</option>
+            <option value="US/Arizona">(GMT-07:00) Arizona</option>
+            <option value="America/Chihuahua">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
+            <option value="US/Mountain">(GMT-07:00) Mountain Time (US & Canada)</option>
+            <option value="America/Managua">(GMT-06:00) Central America</option>
+            <option value="US/Central">(GMT-06:00) Central Time (US & Canada)</option>
+            <option value="America/Mexico_City">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
+            <option value="Canada/Saskatchewan">(GMT-06:00) Saskatchewan</option>
+            <option value="America/Bogota">(GMT-05:00) Bogota, Lima, Quito, Rio Branco</option>
+            <option value="US/Eastern">(GMT-05:00) Eastern Time (US & Canada)</option>
+            <option value="US/East-Indiana">(GMT-05:00) Indiana (East)</option>
+            <option value="Canada/Atlantic">(GMT-04:00) Atlantic Time (Canada)</option>
+            <option value="America/Caracas">(GMT-04:00) Caracas, La Paz</option>
+            <option value="America/Manaus">(GMT-04:00) Manaus</option>
+            <option value="America/Santiago">(GMT-04:00) Santiago</option>
+            <option value="Canada/Newfoundland">(GMT-03:30) Newfoundland</option>
+            <option value="America/Sao_Paulo">(GMT-03:00) Brasilia</option>
+            <option value="America/Argentina/Buenos_Aires">(GMT-03:00) Buenos Aires, Georgetown</option>
+            <option value="America/Godthab">(GMT-03:00) Greenland</option>
+            <option value="America/Montevideo">(GMT-03:00) Montevideo</option>
+            <option value="America/Noronha">(GMT-02:00) Mid-Atlantic</option>
+            <option value="Atlantic/Cape_Verde">(GMT-01:00) Cape Verde Is.</option>
+            <option value="Atlantic/Azores">(GMT-01:00) Azores</option>
+            <option value="Africa/Casablanca">(GMT+00:00) Casablanca, Monrovia, Reykjavik</option>
+            <option value="Etc/Greenwich">(GMT+00:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London
+            </option>
+            <option value="Europe/Amsterdam">(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
+            <option value="Europe/Belgrade">(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option>
+            <option value="Europe/Brussels">(GMT+01:00) Brussels, Copenhagen, Madrid, Paris</option>
+            <option value="Europe/Sarajevo">(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option>
+            <option value="Africa/Lagos">(GMT+01:00) West Central Africa</option>
+            <option value="Asia/Amman">(GMT+02:00) Amman</option>
+            <option value="Europe/Athens">(GMT+02:00) Athens, Bucharest, Istanbul</option>
+            <option value="Asia/Beirut">(GMT+02:00) Beirut</option>
+            <option value="Africa/Cairo">(GMT+02:00) Cairo</option>
+            <option value="Africa/Harare">(GMT+02:00) Harare, Pretoria</option>
+            <option value="Europe/Helsinki">(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option>
+            <option value="Asia/Jerusalem">(GMT+02:00) Jerusalem</option>
+            <option value="Europe/Minsk">(GMT+02:00) Minsk</option>
+            <option value="Africa/Windhoek">(GMT+02:00) Windhoek</option>
+            <option value="Asia/Kuwait">(GMT+03:00) Kuwait, Riyadh, Baghdad</option>
+            <option value="Europe/Moscow">(GMT+03:00) Moscow, St. Petersburg, Volgograd</option>
+            <option value="Africa/Nairobi">(GMT+03:00) Nairobi</option>
+            <option value="Asia/Tbilisi">(GMT+03:00) Tbilisi</option>
+            <option value="Asia/Tehran">(GMT+03:30) Tehran</option>
+            <option value="Asia/Muscat">(GMT+04:00) Abu Dhabi, Muscat</option>
+            <option value="Asia/Baku">(GMT+04:00) Baku</option>
+            <option value="Asia/Yerevan">(GMT+04:00) Yerevan</option>
+            <option value="Asia/Kabul">(GMT+04:30) Kabul</option>
+            <option value="Asia/Yekaterinburg">(GMT+05:00) Yekaterinburg</option>
+            <option value="Asia/Karachi">(GMT+05:00) Islamabad, Karachi, Tashkent</option>
+            <option value="Asia/Calcutta">(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi</option>
+            <option value="Asia/Calcutta">(GMT+05:30) Sri Jayawardenapura</option>
+            <option value="Asia/Katmandu">(GMT+05:45) Kathmandu</option>
+            <option value="Asia/Almaty">(GMT+06:00) Almaty, Novosibirsk</option>
+            <option value="Asia/Dhaka">(GMT+06:00) Astana, Dhaka</option>
+            <option value="Asia/Rangoon">(GMT+06:30) Yangon (Rangoon)</option>
+            <option value="Asia/Bangkok">(GMT+07:00) Bangkok, Hanoi, Jakarta</option>
+            <option value="Asia/Krasnoyarsk">(GMT+07:00) Krasnoyarsk</option>
+            <option value="Asia/Hong_Kong">(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
+            <option value="Asia/Kuala_Lumpur">(GMT+08:00) Kuala Lumpur, Singapore</option>
+            <option value="Asia/Irkutsk">(GMT+08:00) Irkutsk, Ulaan Bataar</option>
+            <option value="Australia/Perth">(GMT+08:00) Perth</option>
+            <option value="Asia/Taipei">(GMT+08:00) Taipei</option>
+            <option value="Asia/Tokyo">(GMT+09:00) Osaka, Sapporo, Tokyo</option>
+            <option value="Asia/Seoul">(GMT+09:00) Seoul</option>
+            <option value="Asia/Yakutsk">(GMT+09:00) Yakutsk</option>
+            <option value="Australia/Adelaide">(GMT+09:30) Adelaide</option>
+            <option value="Australia/Darwin">(GMT+09:30) Darwin</option>
+            <option value="Australia/Brisbane">(GMT+10:00) Brisbane</option>
+            <option value="Australia/Canberra">(GMT+10:00) Canberra, Melbourne, Sydney</option>
+            <option value="Australia/Hobart">(GMT+10:00) Hobart</option>
+            <option value="Pacific/Guam">(GMT+10:00) Guam, Port Moresby</option>
+            <option value="Asia/Vladivostok">(GMT+10:00) Vladivostok</option>
+            <option value="Asia/Magadan">(GMT+11:00) Magadan, Solomon Is., New Caledonia</option>
+            <option value="Pacific/Auckland">(GMT+12:00) Auckland, Wellington</option>
+            <option value="Pacific/Fiji">(GMT+12:00) Fiji, Kamchatka, Marshall Is.</option>
+            <option value="Pacific/Tongatapu">(GMT+13:00) Nuku'alofa</option>
+            </selec>
+         </select>
+         <button class="btn-save">Save</button>
+         <button class="btn-cancel">Cancel</button>
+      </div>
+      <!-- =-=-=-=-=-=-=-= END SETTINGS =-=-=-=-=-=-= -->
+   </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
 </html>
