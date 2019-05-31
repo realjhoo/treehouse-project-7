@@ -1,4 +1,6 @@
-// =-=-=-=-=-=-=-= TRAFFIC CHART =-=-=-=-=-=-=-=-=-=-=-=
+/* eslint-disable no-console */
+var first_run_flag = true;
+// =-=-=-=-=-=-=-=-=-=-=-=-= TRAFFIC CHART =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 function createLineChart() {
    // args to pass - datalabels, data
    let lineChart = null;
@@ -84,9 +86,9 @@ function createLineChart() {
       }
    });
 }
-// =-=-=-=-=-=-=-=-=-=-=-= END LINE CHART =-=-=-=-=-=-=-=-=-=
+// =-=-=-=-=-=-=-=-=-=-=-= END LINE CHART =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-// =-=-=-=-=-=-=-=-=-=-=-=-= BAR CHART =-=-=-=-=-=-=-=-=
+// =-=-=-=-=-=-=-=-=-=-=-=-= BAR CHART =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 function createBarChart() {
    let chartLabel = ["S", "M", "T", "W", "T", "F", "S"];
    let chartData = [75, 100, 175, 125, 225, 200, 100];
@@ -134,9 +136,9 @@ function createBarChart() {
       }
    });
 }
-// =-=-=-=-=-=-=-=-=-=-= END BAR CHART =-=-=-=-=-=-=-=-=
+// =-=-=-=-=-=-=-=-=-=-= END BAR CHART =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-// =-=-=-=-=-=-=-=-=-=-= MOBILE USER CHART =-=-=-=-=-=-=-=-=-=-=-=
+// =-=-=-=-=-=-=-=-=-=-= MOBILE USER CHART =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 function createDonutChart() {
    //
    let chartLabel = ["Phones", "Tablets", "Desktop"];
@@ -174,10 +176,56 @@ function createDonutChart() {
       }
    });
 }
-// =-=-=-=-=-=-=-=-=-=-=-=-= END OF MOBILE USER CHART =-=-=-=-=-=-=
+// =-=-=-=-=-=-=-=-=-=-=-=-= END OF MOBILE USER CHART =-=-=-=-=-=-=-=-=-=-=-=-=
 
-// =-=-=-=-=-=-=-=-=-=-= MAIN PROCEDURE =-=-=-=-=-=-=-=-=-=-=-=-=
+document.addEventListener("click", event => {
+   if (event.target.className == "nav-button") {
+      // =-=-=-=-=-= TURN OFF ALL INDICATORS =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+      let nav_button = document.getElementsByClassName("nav-button");
+      for (let i = 0; i < 4; i++) {
+         nav_button[i].style.borderLeftStyle = "none";
+         nav_button[i].style.opacity = "0.4";
+      }
+      // =-=-=-=-=-=-= TURN ON THE DESIRED INDICATOR =-=-=-=-=-=-=-=-=-=-=-=-=
+      event.target.style.borderLeft = "3px solid #82d67d";
+      event.target.style.borderRadius = "3px";
+      event.target.style.opacity = "1";
+   }
+});
 
+document.addEventListener("mouseover", event => {
+   if (event.target.className == "nav-button") {
+      //  =-=-=-=-=-=-=-=-=-=-=-= TURN OFF ALL INDICATORS =-=-=-=-=-=-=-=-=-=-=
+      let nav_button = document.getElementsByClassName("nav-button");
+      for (let i = 0; i < 4; i++) {
+         if (nav_button[i].style.borderLeftStyle !== "solid") {
+            nav_button[i].style.opacity = "0.4";
+         }
+      }
+      // =-=-=-=-=-=-=-=-=-= TURN ON TARGETED INDICATOR =-=-=-=-=-=-=-=-=-=-=-=
+      event.target.style.opacity = "1";
+   }
+});
+
+document.addEventListener("mouseout", event => {
+   if (event.target.className == "nav-button") {
+      if (event.target.style.borderLeftStyle == "solid") {
+         event.target.style.opacity = "1";
+      } else {
+         event.target.style.opacity = "0.4";
+      }
+   }
+});
+
+// =-=-=-=-=-=-=-=-=-=-= MAIN PROCEDURE =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 createLineChart();
 createBarChart();
 createDonutChart();
+
+window.onload = function() {
+   if (first_run_flag) {
+      first_run_flag = false;
+      let first = document.getElementById("ico-dashboard");
+      first.style.borderLeftStyle = "solid";
+   }
+};

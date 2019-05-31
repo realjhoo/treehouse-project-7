@@ -41,7 +41,7 @@
       <!-- end header -->
 
       <!-- alert bar -->
-      <div class="alert-bar"><span class="alert"> Alert!</span> La bovinoj mortas, la parencoj mortas, vi ankaŭ mortas,
+      <div class="alert-bar"><span class="alert"> Alert!</span> Bovinoj mortas, parencoj mortas, kaj vi ankaŭ mortas,
          sed famo vivas eterne.
          <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
       </div>
@@ -50,24 +50,32 @@
 
          <!-- NAVIGATION BAR-->
          <a href="#">
-            <img class="ico-dashboard" src="icons/icon-dashboard.svg" alt="Dashboard" />
+            <img class="nav-button" id="ico-dashboard" src="icons/icon-dashboard.svg" alt="Dashboard" />
          </a>
          <a href="#">
-            <img class="ico-members" src="icons/icon-members.svg" alt="Members" />
+            <img class="nav-button" id="ico-members" src="icons/icon-members.svg" alt="Members" />
          </a>
-         <a href="#"><img class="ico-visits" src="icons/icon-visits.svg" alt="Visits" /></a>
          <a href="#">
-            <img class="ico-settings" src="icons/icon-settings.svg" alt="Settings" />
+            <img class="nav-button" id="ico-visits" src="icons/icon-visits.svg" alt="Visits" /></a>
+         <a href="#">
+            <img class="nav-button" id="ico-settings" src="icons/icon-settings.svg" alt="Settings" />
          </a>
       </div>
       <!-- END NAV BAR -->
-      <!-- TAB AND SEARCH -->
+
+      <!-- =-=-=-=-=-=-=-=-= TAB AND SEARCH =-=-=-=-=-=-=-=-=-=-=-= -->
       <div class="tab-wrapper">
          <div class="tab">Dashboard</div>
+         <div class="tab-filler"></div>
       </div>
-      <div class="search"> <input class="inpt-search" type="search" placeholder="Search" />
+
+      <div class="search-wrapper">
+         <div class="search">
+            <input class="inpt-search" type="search" placeholder="Search" />
+         </div>
       </div>
-      <!-- END TAB AND SEARCH -->
+      <!-- =-=-=-=-=-=-=-=-=-= END TAB AND SEARCH =-=-=-=-=-=-=-=-= -->
+
       <div class="lineChart">
          <!-- LINE CHART -->
          <p class="chart-options">Traffic</p>

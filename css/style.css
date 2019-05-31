@@ -96,7 +96,6 @@ p {
 hr {
    width: 0px;
    height: 2em;
-   border-left: 1px solid black;
    margin-right: 15px;
    margin-left: 15px;
 }
@@ -115,26 +114,27 @@ hr {
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= NAV BAR =-=-=-=-=-=-=-=-=-=-= */
 .navbar {
    grid-area: nav;
-   color: #ffffff;
    background-color: #4d4c72;
-   border-right: 1px solid #d8d8d7;
 }
 
-.ico-dashboard,
-.ico-members,
-.ico-visits,
-.ico-settings {
+#ico-dashboard,
+#ico-members,
+#ico-visits,
+#ico-settings {
    display: flex;
    height: 35px;
-   width: 35px;
+   width: 100px;
+   min-width: 35px;
+   min-height: 35px;
+   padding-left: 12px;
+   padding-right: 14px;
    margin: 15px auto 35px auto;
    opacity: 0.4;
 }
 
-.ico-dashboard:hover,
-.ico-members:hover,
-.ico-visits:hover,
-.ico-settings:hover {
+#ico-dashboard {
+   border-left: 3px solid #82d67d;
+   border-radius: 3px;
    opacity: 1;
 }
 
@@ -174,27 +174,33 @@ hr {
 
 .tab-wrapper {
    display: flex;
-   background-color: #fbfbfb;
-   border-bottom: 1px solid #b2b1b2;
 }
 
 .tab {
-   grid-area: "tab";
+   grid-area: tab;
    font-size: 1.2em;
    height: 3em;
    line-height: 3em;
    background-color: white;
    padding-left: 1em;
    border-right: 1px solid #b2b1b2;
-   border-bottom: 5px dashed red;
-   width: 30%;
+   width: 52%;
+}
+
+.tab-filler {
+   background-color: #fbfbfb;
+   border-bottom: 1px solid #b2b1b2;
+   width: 100%;
+}
+
+.search-wrapper {
+   border-bottom: 1px solid #b2b1b2;
+   background-color: #fbfbfb;
 }
 
 .search {
    grid-area: "search";
    line-height: 3em;
-   background-color: #fbfbfb;
-   border-bottom: 1px solid #b2b1b2;
 }
 
 .inpt-search {
@@ -250,7 +256,6 @@ hr {
    color: #666666;
    width: 100%;
    max-height: 230px;
-   /* border: 1px solid #d8d8d7; */
    margin-bottom: 80px;
 }
 
@@ -545,18 +550,3 @@ hr {
    background-color: #b2b1b2;
 }
 /* =-=-=-=-=-=-=-=-=-=-=-= END OF GRID ITEMS =-=-=-=-=-=-=-=-=-=-=-=-= */
-
-/* =-=-=-=-=-=-=-=-=-= TOGGLE SWITCH OVERRIDES =-=-=-=-=-=-=-=-=-=-= */
-.switch-ios.switch-light input:checked ~ span {
-   box-shadow: inset 0 0 0 30px #7477bf;
-}
-
-.switch-ios.switch-light input:checked ~ span a {
-   border-color: #666666;
-}
-
-.switch-ios.switch-light input:checked ~ span span:last-of-type,
-.switch-ios.switch-light span span {
-   text-transform: uppercase;
-}
-/*  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */

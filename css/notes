@@ -1,16 +1,22 @@
 TODO
 
-Fix Tab display border (rebuild entire track?)
-
-Add green indicator on menu
-
-Buildout and style New Members and Recent Activity
+Header - animate bell on hover
 
 Fix nav bar navigation
 
-Make chart selectors work
+Send button - submit form and display confirmation - use JS
+                error check for user and message
 
-Check Exceeds Requirements (add functionality)
+
+
+Buildout and style New Members and Recent Activity
+
+Check Exceeds Requirements
+    Display 2 notifications when user clicks alert bell (opo-up or dropdown)
+    Make chart selectors work (daily, monthly etc)
+    Search for user box - add autocomplete
+    Use local storage to store settings for reload
+        (which settings???)
 
 Detail check
 
