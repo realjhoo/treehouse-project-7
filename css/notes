@@ -1,6 +1,6 @@
 TODO
 
-Header - animate bell on hover
+Click on bell hides green message indicator and displays two messages in dropdown
 
 Fix nav bar navigation
 
@@ -16,7 +16,13 @@ Check Exceeds Requirements
     Make chart selectors work (daily, monthly etc)
     Search for user box - add autocomplete
     Use local storage to store settings for reload
-        (which settings???)
+        Settings to save:
+            which line chart was selected
+            position of toggle switches
+            selected timezone
+
+Make mobile friendly with media queries
+    320 - 768 - 1024
 
 Detail check
 

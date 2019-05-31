@@ -74,7 +74,13 @@ p {
    width: 86%;
 }
 
+.ico-bell:hover {
+   transform: rotate(45deg);
+}
+
 .ico-bell {
+   transform-origin: 50% 50%;
+   transition: transform 0.3s ease-out;
    height: 1em;
    width: 1em;
    margin-right: 10px;
@@ -352,11 +358,12 @@ hr {
    color: #666666;
    margin-top: -15px;
 }
-/* =-=-=-=-=-=-=-=-=-= END OF SOCIAL STATS =-=-=-=-=-=-=-=-=-=-=-=-= */
+/* =-=-=-=-=-=-= END OF SOCIAL STATS =-=-=-=-=-=-=-=-=-=-=-=-= */
+
 .new-members {
    grid-area: new-mems;
-   background-color: #e2e3f6;
-   border: 1px solid #d8d8d7;
+   /* background-color: #e2e3f6;
+    border: 1px solid #d8d8d7; */
 }
 
 .recent-activity {
