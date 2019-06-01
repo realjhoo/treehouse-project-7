@@ -178,11 +178,11 @@ function createDonutChart() {
 }
 // =-=-=-=-=-=-=-=-=--= END OF MOBILE USER CHART =-=-=-=-=-=-=-=-=-=-=-=-=
 
-function new_members() {
+function insertMemberActivity() {
    const newMemberData = [
       {
          name: "Victoria Chambers",
-         image: "../images/member-1.jpg",
+         image: "images/member-1.jpg",
          email: "victoria.chambers80@example.com",
          date: "10/15/15",
          message: "commented on YourApp's SEO Tips",
@@ -222,43 +222,84 @@ function new_members() {
    // 4. appendChild
    // example function stickInDOM ("div", "member", newMemberData[i], "email");
 
-   // for loop goes here
-   // get target div conatiner
-   let new_member_wrapper = document.getElementById("new-member-wrapper");
+   for (let i = 0; i < newMemberData.length; i++) {
+      // get target div conatiner
+      let new_member_wrapper = document.getElementById("new-member-wrapper");
+      // create new div to hold members
+      let member_div = document.createElement("div");
+      member_div.setAttribute("class", "member-div"); // prolly flex
+      new_member_wrapper.appendChild(member_div);
 
-   // create new div to hold members
-   let member_div = document.createElement("div");
-   // member_div.setAttribute("class", "member");
-   new_member_wrapper.appendChild(member_div);
+      // add member image
+      let member_image = document.createElement("img");
+      member_image.setAttribute("src", newMemberData[i].image);
+      member_image.setAttribute("class", "member-avatar");
+      member_div.appendChild(member_image);
 
-   // add member image
-   let member_image = document.createElement("img");
-   member_image.setAttribute("src", newMemberData[0].image); // loop fix
-   // assign class
-   member_div.appendChild(member_image);
+      // add name div
+      let name_div = document.createElement("div");
+      // assign class? for display:
+      member_div.appendChild(name_div);
 
-   // add name div
-   let name_div = document.createElement("div");
-   // assign class
-   member_div.appendChild(name_div);
+      // insert name in name div             qqq
+      let member_name = document.createElement("p");
+      member_name.setAttribute("class", "member-name");
+      member_name.textContent = newMemberData[i].name;
+      name_div.appendChild(member_name);
 
-   // insert name in name div
-   let member_name = document.createElement("p");
-   // assign class
-   member_name.textContent = newMemberData[0].name; // loop fix
-   name_div.appendChild(member_name);
+      //insert email in name div             qqq
+      let member_email = document.createElement("p");
+      member_email.setAttribute("class", "member-email");
+      member_email.textContent = newMemberData[i].email;
+      name_div.appendChild(member_email);
 
-   //insert email in name div
-   let member_email = document.createElement("p");
-   // assign class
-   member_email.textContent = newMemberData[0].email; //loop fix
-   name_div.appendChild(member_email);
+      // insert date                         qqq
+      let member_date = document.createElement("p");
+      member_date.setAttribute("class", "member-date");
+      member_date.textContent = newMemberData[i].date;
+      name_div.appendChild(member_date);
 
-   // insert date
-   let member_date = document.createElement("p");
-   // assign class
-   member_date.textContent = newMemberData[0].date; // loop fix
-   name_div.appendChild(member_date);
+      // Add recent activity data
+
+      let recent_activity_wrapper = document.getElementById(
+         "recent-activity-wrapper"
+      );
+
+      // create new div to hold recent activity
+      let activity_div = document.createElement("div");
+      activity_div.setAttribute("class", "activity-div");
+      recent_activity_wrapper.appendChild(activity_div);
+
+      // insert member avatar
+      member_image = document.createElement("img");
+      member_image.setAttribute("src", newMemberData[i].image);
+      member_image.setAttribute("class", "member-avatar");
+      activity_div.appendChild(member_image);
+
+      // add comment div
+      let comment_div = document.createElement("div");
+      // assign class
+      activity_div.appendChild(comment_div);
+
+      // insert comment in comment div             qqq
+      member_comment = document.createElement("p");
+      member_comment.setAttribute("class", "member-comment");
+      member_comment.textContent =
+         newMemberData[i].name + " " + newMemberData[i].message;
+      comment_div.appendChild(member_comment);
+
+      //insert time ago in activity div            qqq
+      let time_ago = document.createElement("p");
+      time_ago.setAttribute("class", "time-ago");
+      time_ago.textContent = newMemberData[i].time;
+      activity_div.appendChild(time_ago);
+
+      // insert > for bogus arrow                  qqq
+      let greater_than = document.createElement("p");
+      greater_than.setAttribute("class", "greater-than");
+      greater_than.textContent = "＞";
+      activity_div.appendChild(greater_than);
+   }
 }
 
 document.addEventListener("click", event => {
@@ -304,7 +345,7 @@ document.addEventListener("mouseout", event => {
 createLineChart();
 createBarChart();
 createDonutChart();
-new_members();
+insertMemberActivity();
 
 window.onload = function() {
    if (first_run_flag) {

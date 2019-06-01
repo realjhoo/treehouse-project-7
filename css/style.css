@@ -366,10 +366,67 @@ hr {
     border: 1px solid #d8d8d7; */
 }
 
+.member-div {
+   border-bottom: 1px solid #d1d1d1;
+}
+
+.member-avatar {
+   width: 35px;
+   height: auto;
+   border-radius: 50%;
+   margin-left: 1.5em;
+   margin-top: 10px;
+}
+
+.member-name {
+   font-size: 0.8em;
+   text-transform: capitalize;
+   padding-top: 0;
+   padding-bottom: 0;
+}
+
+.member-email {
+   text-transform: lowercase;
+   color: #7377bf;
+   font-size: 0.7em;
+   padding-top: 0;
+   padding-bottom: 0;
+}
+
+.member-date {
+   font-size: 0.7em;
+   padding-top: 0;
+   padding-bottom: 0;
+}
+
 .recent-activity {
    grid-area: recent;
-   background-color: #e2e3f6;
    border: 1px solid #d8d8d7;
+}
+
+.activity-div {
+   border-bottom: 1px solid #d1d1d1;
+}
+
+.member-comment {
+   font-size: 0.8em;
+   text-transform: initial;
+   padding-top: 0;
+   padding-bottom: 0;
+}
+
+.time-ago {
+   font-size: 0.7em;
+   text-transform: initial;
+   padding-top: 0;
+   padding-bottom: 0;
+}
+
+.greater-than {
+   color: #7377bf;
+   font-size: 1.5em;
+   padding-top: 0;
+   padding-bottom: 0;
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-= MESSAGE USER =-=-=-=-=-=-=-=-=-=-=-= */

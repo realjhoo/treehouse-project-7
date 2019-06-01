@@ -1,5 +1,8 @@
 TODO
 
+New Members and Activity
+    set display to line up items as in mockup
+
 Click on bell hides green message indicator and displays two messages in dropdown
 
 Fix nav bar navigation
@@ -7,9 +10,7 @@ Fix nav bar navigation
 Send button - submit form and display confirmation - use JS
                 error check for user and message
 
-
-
-Buildout and style New Members and Recent Activity
+Can newMembers() fuction be refactored DRY?
 
 Check Exceeds Requirements
     Display 2 notifications when user clicks alert bell (opo-up or dropdown)
