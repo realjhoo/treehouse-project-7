@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 var first_run_flag = true;
+
 // =-=-=-=-=-=-=-=-=-=-=-=-= TRAFFIC CHART =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 function createLineChart() {
    // args to pass - datalabels, data
@@ -86,7 +87,6 @@ function createLineChart() {
       }
    });
 }
-// =-=-=--=-=-=-=-=-= END LINE CHART =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 // =-=-=-=-=-=-=-=-=-=-= BAR CHART =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 function createBarChart() {
@@ -136,7 +136,6 @@ function createBarChart() {
       }
    });
 }
-// =-=-=-=-=-=-=-=-=-=-= END BAR CHART =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 // =-=-=-=-=-=-=-= MOBILE USER CHART =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 function createDonutChart() {
@@ -176,7 +175,13 @@ function createDonutChart() {
       }
    });
 }
-// =-=-=-=-=-=-=-=-=--= END OF MOBILE USER CHART =-=-=-=-=-=-=-=-=-=-=-=-=
+
+function newElement(element, class_name, member_data, insert_point) {
+   let element_name = document.createElement(element);
+   element_name.setAttribute("class", class_name);
+   element_name.textContent = member_data;
+   insert_point.appendChild(element_name);
+}
 
 function insertMemberActivity() {
    const newMemberData = [
@@ -213,92 +218,53 @@ function insertMemberActivity() {
          time: "1 day ago"
       }
    ];
-   // to modularize this
-   // create func with three lines
-   // 0. pass ??? where to insert
-   // 1. createElement (pass div or p)
-   // 2. assign class name (pass class)
-   // 3. textContent (pass newMemberData[i] and name or email or date etc)
-   // 4. appendChild
-   // example function stickInDOM ("div", "member", newMemberData[i], "email");
 
    for (let i = 0; i < newMemberData.length; i++) {
-      // get target div conatiner
+      // GET TARGET DIV & CREATE CONTAINER for MEMBER DATA =-=-=-=-=-=
       let new_member_wrapper = document.getElementById("new-member-wrapper");
-      // create new div to hold members
       let member_div = document.createElement("div");
-      member_div.setAttribute("class", "member-div"); // prolly flex
+      member_div.setAttribute("class", "member-div");
       new_member_wrapper.appendChild(member_div);
 
-      // add member image
+      // =-=-=-=-= SET MEMBER AVATER IMAGE =-=-=-=-=-=-=-=-=-=-=-=
       let member_image = document.createElement("img");
       member_image.setAttribute("src", newMemberData[i].image);
       member_image.setAttribute("class", "member-avatar");
       member_div.appendChild(member_image);
 
-      // add name div
-      let name_div = document.createElement("div");
-      // assign class? for display:
+      // =-=-=-=-=-= CONTAINER DIV for NAME =-=-=-=-=-=-=-=-=--=
+      let name_div = document.createElement("div"); // may need class
       member_div.appendChild(name_div);
 
-      // insert name in name div             qqq
-      let member_name = document.createElement("p");
-      member_name.setAttribute("class", "member-name");
-      member_name.textContent = newMemberData[i].name;
-      name_div.appendChild(member_name);
+      // =-=-=-=-=-=-= INSERT NAME, EMAIL & DATE -=-=-=-=-=-=-=
+      newElement("p", "member-name", newMemberData[i].name, name_div);
+      newElement("p", "member-email", newMemberData[i].email, name_div);
+      newElement("p", "member-date", newMemberData[i].date, name_div);
 
-      //insert email in name div             qqq
-      let member_email = document.createElement("p");
-      member_email.setAttribute("class", "member-email");
-      member_email.textContent = newMemberData[i].email;
-      name_div.appendChild(member_email);
-
-      // insert date                         qqq
-      let member_date = document.createElement("p");
-      member_date.setAttribute("class", "member-date");
-      member_date.textContent = newMemberData[i].date;
-      name_div.appendChild(member_date);
-
-      // Add recent activity data
-
+      // GET TARGET DIV & CREATE CONTAINER for MEMBER ACTIVITY
       let recent_activity_wrapper = document.getElementById(
          "recent-activity-wrapper"
       );
-
-      // create new div to hold recent activity
       let activity_div = document.createElement("div");
       activity_div.setAttribute("class", "activity-div");
       recent_activity_wrapper.appendChild(activity_div);
 
-      // insert member avatar
+      // =-=-=-=-=-=-=-=-=-= INSERT MEMBER AVATAR =-=-=-=-=-=-=-=-=-=
       member_image = document.createElement("img");
       member_image.setAttribute("src", newMemberData[i].image);
       member_image.setAttribute("class", "member-avatar");
       activity_div.appendChild(member_image);
 
-      // add comment div
-      let comment_div = document.createElement("div");
-      // assign class
+      // -=-=-=-=-=-=-= CREATE COMMENT DIV and INSERT COMMENT =-=-=-=-=-=-=
+      let comment_div = document.createElement("div"); //may need class
       activity_div.appendChild(comment_div);
-
-      // insert comment in comment div             qqq
-      member_comment = document.createElement("p");
-      member_comment.setAttribute("class", "member-comment");
-      member_comment.textContent =
+      let memberComment =
          newMemberData[i].name + " " + newMemberData[i].message;
-      comment_div.appendChild(member_comment);
 
-      //insert time ago in activity div            qqq
-      let time_ago = document.createElement("p");
-      time_ago.setAttribute("class", "time-ago");
-      time_ago.textContent = newMemberData[i].time;
-      activity_div.appendChild(time_ago);
-
-      // insert > for bogus arrow                  qqq
-      let greater_than = document.createElement("p");
-      greater_than.setAttribute("class", "greater-than");
-      greater_than.textContent = "＞";
-      activity_div.appendChild(greater_than);
+      // =-=-=-= INSERT COMMENT, TIME  and ARROW POINTER =-=-=-=-=-=-=-=-=
+      newElement("p", "member-comment", memberComment, comment_div);
+      newElement("p", "time-ago", newMemberData[i].time, activity_div);
+      newElement("p", "greater-than", "＞", activity_div);
    }
 }
 
