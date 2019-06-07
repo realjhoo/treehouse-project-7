@@ -10,10 +10,8 @@ Fix nav bar navigation
 Send button - submit form and display confirmation - use JS
                 error check for user and message
 
-Can newMembers() fuction be refactored DRY?
-
 Check Exceeds Requirements
-    Display 2 notifications when user clicks alert bell (opo-up or dropdown)
+    Display 2 notifications when user clicks alert bell (pop-up or dropdown)
     Make chart selectors work (daily, monthly etc)
     Search for user box - add autocomplete
     Use local storage to store settings for reload
