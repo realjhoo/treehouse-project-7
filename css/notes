@@ -1,11 +1,8 @@
 TODO
 
-New Members and Activity
-    set display to line up items as in mockup
-
 Click on bell hides green message indicator and displays two messages in dropdown
 
-Fix nav bar navigation
+Fix up nav bar navigation
 
 Send button - submit form and display confirmation - use JS
                 error check for user and message

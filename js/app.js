@@ -232,14 +232,10 @@ function insertMemberActivity() {
       member_image.setAttribute("class", "member-avatar");
       member_div.appendChild(member_image);
 
-      // =-=-=-=-=-= CONTAINER DIV for NAME =-=-=-=-=-=-=-=-=--=
-      let name_div = document.createElement("div"); // may need class
-      member_div.appendChild(name_div);
-
       // =-=-=-=-=-=-= INSERT NAME, EMAIL & DATE -=-=-=-=-=-=-=
-      newElement("p", "member-name", newMemberData[i].name, name_div);
-      newElement("p", "member-email", newMemberData[i].email, name_div);
-      newElement("p", "member-date", newMemberData[i].date, name_div);
+      newElement("p", "member-name", newMemberData[i].name, member_div);
+      newElement("p", "member-email", newMemberData[i].email, member_div);
+      newElement("p", "member-date", newMemberData[i].date, member_div);
 
       // GET TARGET DIV & CREATE CONTAINER for MEMBER ACTIVITY
       let recent_activity_wrapper = document.getElementById(
@@ -261,7 +257,7 @@ function insertMemberActivity() {
       let memberComment =
          newMemberData[i].name + " " + newMemberData[i].message;
 
-      // =-=-=-= INSERT COMMENT, TIME  and ARROW POINTER =-=-=-=-=-=-=-=-=
+      // =-=-= INSERT COMMENT, TIME and ARROW POINTER =-=-=-=-=-=-=-=
       newElement("p", "member-comment", memberComment, comment_div);
       newElement("p", "time-ago", newMemberData[i].time, activity_div);
       newElement("p", "greater-than", "＞", activity_div);

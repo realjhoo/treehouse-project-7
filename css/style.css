@@ -117,7 +117,7 @@ hr {
    padding-left: 10px;
 }
 
-/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= NAV BAR =-=-=-=-=-=-=-=-=-=-= */
+/* =-=-=-=-=-=-=-=-=-=-=-=-= NAV BAR =-=-=-=-=-=-=-=-=-=-= */
 .navbar {
    grid-area: nav;
    background-color: #4d4c72;
@@ -325,7 +325,9 @@ hr {
    display: grid;
    grid-template-columns: 1fr 2fr;
    grid-template-rows: auto;
-   grid-template-areas: "ico s-media s-media" "ico num num";
+   grid-template-areas:
+      "ico s-media s-media"
+      "ico num num";
    background-color: #fbfbfb;
    border: 1px solid #d1d1d1;
 }
@@ -358,71 +360,82 @@ hr {
    color: #666666;
    margin-top: -15px;
 }
-/* =-=-=-=-=-=-= END OF SOCIAL STATS =-=-=-=-=-=-=-=-=-=-=-=-= */
 
+/* =-=-=-=-=-=-= NEW MEMBERS =-=-=-=-=-=-=-=-=-=-=-=-= */
 .new-members {
    grid-area: new-mems;
-   /* background-color: #e2e3f6;
-    border: 1px solid #d8d8d7; */
+   border: 1px solid #d8d8d7;
 }
 
 .member-div {
+   display: grid;
+   grid-template-columns: 20px 75% 5%;
+   grid-template-areas:
+      "ava name date"
+      "ava email date";
    border-bottom: 1px solid #d1d1d1;
 }
 
 .member-avatar {
+   grid-area: ava;
    width: 35px;
-   height: auto;
+   height: 35px;
    border-radius: 50%;
-   margin-left: 1.5em;
-   margin-top: 10px;
+   margin: auto 0 auto 10px;
 }
 
-.member-name {
+.member-name,
+.member-comment {
+   grid-area: name;
    font-size: 0.8em;
    text-transform: capitalize;
-   padding-top: 0;
-   padding-bottom: 0;
+   padding: 10px 0 0 30px;
 }
 
-.member-email {
+.member-email,
+.time-ago {
+   grid-area: email;
    text-transform: lowercase;
    color: #7377bf;
    font-size: 0.7em;
-   padding-top: 0;
-   padding-bottom: 0;
+   padding: 0 0 10px 30px;
 }
 
-.member-date {
+.member-date,
+.greater-than {
+   grid-area: date;
    font-size: 0.7em;
-   padding-top: 0;
-   padding-bottom: 0;
+   margin: auto 0;
 }
 
+/* =-=-=-=-=-=-= RECENT ACTIVITY =-=-=-=-=-=-=-=-=-=-=-=-= */
 .recent-activity {
    grid-area: recent;
    border: 1px solid #d8d8d7;
 }
 
 .activity-div {
+   display: grid;
+   grid-template-columns: 20px 75% 5%;
+   grid-template-areas:
+      "ava comment g-than"
+      "ava time g-than";
    border-bottom: 1px solid #d1d1d1;
 }
 
 .member-comment {
-   font-size: 0.8em;
+   grid-area: comment;
+   font-size: 0.7em;
    text-transform: initial;
-   padding-top: 0;
-   padding-bottom: 0;
 }
 
 .time-ago {
-   font-size: 0.7em;
+   grid-area: time;
    text-transform: initial;
-   padding-top: 0;
-   padding-bottom: 0;
 }
 
 .greater-than {
+   grid-area: g-than;
    color: #7377bf;
    font-size: 1.5em;
    padding-top: 0;
