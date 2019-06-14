@@ -74,11 +74,53 @@ p {
    width: 86%;
 }
 
+/*  =-=-=-=-=-=-=-=-=-= DROPDOWN MENU =-=-=-=-=-=-=-= */
+
+ul li {
+   float: left;
+   list-style: none;
+   position: relative;
+}
+
+ul li ul {
+   float: left;
+   display: none; /* Hide until needed */
+   position: absolute;
+   background-color: #e2e3f5;
+   border-radius: 0 0 5px 5px;
+   margin-top: 22px;
+   margin-left: -90px;
+   z-index: 2;
+}
+
+ul li ul li {
+   padding-top: 16px;
+   padding-bottom: 8px;
+   width: 280px;
+}
+
+ul li ul li:hover {
+   background-color: #cecfdd;
+}
+
+ul li ul li a:active {
+   color: #666666;
+}
+
+ul li ul li a {
+   text-decoration: none;
+   font-size: 0.6em;
+   padding: 8px 14px;
+}
+
+/* =-=-=-=-=-=-=-= END DROPDOWN =-=-=-=-=-=-=-= */
+
 .ico-bell:hover {
    transform: rotate(45deg);
 }
 
 .ico-bell {
+   font-size: 1.2em;
    transform-origin: 50% 50%;
    transition: transform 0.3s ease-out;
    height: 1em;
@@ -94,9 +136,8 @@ p {
    height: 18px;
    width: 20px;
    text-align: center;
-   margin-left: 8px;
-   margin-top: -38px;
-   z-index: 5;
+   margin-left: -24px;
+   margin-top: -5px;
 }
 
 hr {
@@ -226,6 +267,7 @@ hr {
    border: 1px solid #dbdbdb;
    border-radius: 5px;
    margin-top: 6px;
+   z-index: 1;
 }
 
 /* =-=-=-=-=-=-=-=-=-=-= CHARTS =-=-=-=-=-=-=-=-=-=-=-= */
@@ -364,7 +406,6 @@ hr {
 /* =-=-=-=-=-=-= NEW MEMBERS =-=-=-=-=-=-=-=-=-=-=-=-= */
 .new-members {
    grid-area: new-mems;
-   border: 1px solid #d8d8d7;
 }
 
 .member-div {
@@ -373,7 +414,22 @@ hr {
    grid-template-areas:
       "ava name date"
       "ava email date";
+   /* line up border elements */
+   margin-bottom: 2px;
+   position: relative;
+}
+
+/* .member-div:after creates border element */
+.member-div:after {
+   position: absolute;
+   bottom: -3px;
+   content: "";
+   width: 80%;
    border-bottom: 1px solid #d1d1d1;
+   margin-left: 10%;
+   /* To Center the border line
+   100 - border-width = remain
+   remain/2 = margin-left */
 }
 
 .member-avatar {
@@ -411,7 +467,7 @@ hr {
 /* =-=-=-=-=-=-= RECENT ACTIVITY =-=-=-=-=-=-=-=-=-=-=-=-= */
 .recent-activity {
    grid-area: recent;
-   border: 1px solid #d8d8d7;
+   border-left: 1px solid #d8d8d7;
 }
 
 .activity-div {
@@ -420,7 +476,21 @@ hr {
    grid-template-areas:
       "ava comment g-than"
       "ava time g-than";
+   /* line up border elements */
+   margin-bottom: 4px;
+   position: relative;
+}
+
+.activity-div:after {
+   position: absolute;
+   bottom: -5px;
+   content: "";
+   width: 80%;
    border-bottom: 1px solid #d1d1d1;
+   margin-left: 10%;
+   /* To Center the border line
+   100% - border-width = remain
+   remain / 2 = margin-left */
 }
 
 .member-comment {
@@ -626,4 +696,4 @@ hr {
 .btn-cancel {
    background-color: #b2b1b2;
 }
-/* =-=-=-=-=-=-=-=-=-=-=-= END OF GRID ITEMS =-=-=-=-=-=-=-=-=-=-=-=-= */
+/* =-=-=-=-=-=-=-=-= END OF GRID ITEMS =-=-=-=-=-=-=-=-=-=-=-=-= */

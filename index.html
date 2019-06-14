@@ -19,15 +19,30 @@
          <!-- =-=-=-=-=-=-=-= RIGHT SIDE =-=-=-=-=-=-=-=-= -->
          <div class="header-dekstra">
             <!-- =-=-=-=-= Notification Bell =-=-=-=-=-=-= -->
-            <a href="#">
-               <svg class="ico-bell" id="ico-bell-svg" viewBox="0 0 32 32" preserveAspectRatio="xMidYMid meet">
-                  <path
-                     d="M24 18v-8c0-5.5-4.5-10-10-10S4 4.5 4 10v8l-4 8h9.1c0.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H28L24 18zM14 28c-1.3 0-2.4-0.8-2.8-2h5.6C16.4 27.2 15.3 28 14 28zM3 24l3-6v-8c0-4.4 3.6-8 8-8s8 3.6 8 8v8l3 6H3z"
-                     fill="#ffffff" />
-               </svg>
-               <!-- =-=-=-=-=-= MESSAGE INDICATOR =-=-=-=-=-= -->
-               <div class="msg-dot">2</div>
-            </a>
+            <ul>
+               <a class="ico-bell-clk" href="#">
+
+                  <li><a href="#"><svg class="ico-bell" id="ico-bell-svg" viewBox="0 0 32 32"
+                           preserveAspectRatio="xMidYMid meet">
+                           <path
+                              d="M24 18v-8c0-5.5-4.5-10-10-10S4 4.5 4 10v8l-4 8h9.1c0.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H28L24 18zM14 28c-1.3 0-2.4-0.8-2.8-2h5.6C16.4 27.2 15.3 28 14 28zM3 24l3-6v-8c0-4.4 3.6-8 8-8s8 3.6 8 8v8l3 6H3z"
+                              fill="#ffffff" />
+                        </svg></a>
+                     <!-- POPUP MENU -->
+                     <ul id="popup">
+                        <li><a class="menu" href="#">Victoria Chambers commented on a post</a></li>
+                        <li><a class="menu" href="#">Dale Byrd liked a a post</a></li>
+                     </ul>
+                  </li>
+
+                  <!-- =-=-=-=-=-= MESSAGE INDICATOR =-=-=-=-=-= -->
+                  <li>
+                     <div class="msg-dot" id="msg-dot">2</div>
+                  </li>
+
+
+               </a>
+            </ul>
             <!-- =-=-=-=-= DIVIDER LINE AVATAR and NAME =-=-=-= -->
             <hr />
             <img class="avatar" src="images/jhoo.jpg" alt="Real JHoo" />

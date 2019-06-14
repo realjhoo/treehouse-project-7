@@ -265,17 +265,30 @@ function insertMemberActivity() {
 }
 
 document.addEventListener("click", event => {
+   // =-=-=-=-=-= MENU BAR =-=-=-=-=-=-=-=-=-=
    if (event.target.className == "nav-button") {
-      // =-=-=-=-=-= TURN OFF ALL INDICATORS =-=-=-=-=-=-=-=-=-=-=-=
+      //  MENU BUTTON INDICATOR OFF =-=-=-=-=-=-=-=-=-=-=-=
       let nav_button = document.getElementsByClassName("nav-button");
       for (let i = 0; i < 4; i++) {
          nav_button[i].style.borderLeftStyle = "none";
          nav_button[i].style.opacity = "0.4";
       }
-      // =-=-=-=-=-=-= TURN ON THE DESIRED INDICATOR =-=-=-=-=-=-=-=
+      // MENU BUTTON INDICATOR ON =-=-=-=-=-=-=-=
       event.target.style.borderLeft = "3px solid #82d67d";
       event.target.style.borderRadius = "3px";
       event.target.style.opacity = "1";
+   }
+
+   // =-=-=-==-=-=-= CLICK NOTIFICATION BELL =-=-=-=-=-=-=-=
+   if (event.target.tagName == "svg" || event.target.className == "msg-dot") {
+      // =-=-=-=-=-= HIDE MSG DOT - SHOW POPUP =-=-=-=-=-=
+      document.getElementById("msg-dot").style.display = "none";
+      document.getElementById("popup").style.display = "block";
+   }
+
+   // =-=-= CLICK POPUP ITEM =-=-=-=-=-=
+   if (event.target.className == "menu") {
+      document.getElementById("popup").style.display = "none";
    }
 });
 
