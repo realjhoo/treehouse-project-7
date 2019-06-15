@@ -1,21 +1,17 @@
 TODO
 
-Fix up nav bar navigation
-
-Send button - submit form and display confirmation - use JS
-                error check for user and message
 
 Check Exceeds Requirements
-    Display 2 notifications when user clicks alert bell (pop-up or dropdown)
-    Make chart selectors work (daily, monthly etc)
-    Search for user box - add autocomplete
-    Use local storage to store settings for reload
+
+    1. Make chart selectors work (daily, monthly etc)
+    2. Search for user box - add autocomplete
+    3. Use local storage to store settings for reload
         Settings to save:
             which line chart was selected
             position of toggle switches
             selected timezone
 
-Make mobile friendly with media queries
+Make mobile friendly with media queries (ugh)
     320 - 768 - 1024
 
 Detail check

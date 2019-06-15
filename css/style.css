@@ -86,7 +86,9 @@ ul li ul {
    float: left;
    display: none; /* Hide until needed */
    position: absolute;
+   overflow: hidden;
    background-color: #e2e3f5;
+   box-shadow: 3px 15px 15px #666;
    border-radius: 0 0 5px 5px;
    margin-top: 22px;
    margin-left: -90px;
@@ -101,6 +103,7 @@ ul li ul li {
 
 ul li ul li:hover {
    background-color: #cecfdd;
+   border-radius: 0 0 5px 5px;
 }
 
 ul li ul li a:active {
@@ -545,13 +548,40 @@ hr {
    text-transform: uppercase;
    color: #ffffff;
    background-color: #7377bf;
+   cursor: pointer;
    padding-left: 0;
    margin-bottom: 50px;
 }
-/* =-=-=-=-=-=-=-=-=-=-=-=-= END OF MESSAGE USER =-=-=-=-=-=-=-=-=-= */
 
+.popup-box {
+   display: none;
+   position: absolute;
+   width: 450px;
+   overflow: hidden;
+   background-color: #e3e4f2;
+   box-shadow: 0 0 15px #666;
+   border-radius: 5px;
+   text-align: center;
+   padding: 10px;
+   line-height: 32px;
+   margin-bottom: 30px;
+}
+
+.save-btn-close,
+.send-btn-close,
+.err-btn-close {
+   color: #fff;
+   text-transform: uppercase;
+   background-color: #7377bf;
+   padding: 5px 10px;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-= SETTINGS =-=-=-=-=-=-=-=-=-= */
 .settings {
    grid-area: settings;
+   padding-bottom: 6em;
    border: 1px solid #d8d8d7;
 }
 
@@ -562,6 +592,8 @@ hr {
       "label1  switch1"
       "label2   switch2";
 }
+
+/* =-=-=-=-=-=-= BEGIN ON-OFF SWITCHES =-=-=-=-=-=-=-=-= */
 .onoffswitch {
    grid-area: "switch1";
 }
@@ -669,6 +701,8 @@ hr {
    right: 0px;
 }
 
+/* =-=-=-=-=-=-=-= END ON-OFF SWITCHES =-=-=-=-=-=-=-=-=-=-=-=-= */
+
 .timezone {
    font-size: 0.7em;
    background-color: #fbfbfb;
@@ -686,6 +720,8 @@ hr {
    background-color: #7377bf;
    text-transform: uppercase;
    width: 40%;
+   cursor: pointer;
+   outline: none;
    padding-top: 8px;
    padding-bottom: 8px;
    border-radius: 5px;

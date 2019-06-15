@@ -187,8 +187,20 @@
       <!-- =-=-=-=-=-=-=-=-=-= MESSAGE USER =-=-=-=-=-=-=-=-= -->
       <div class="message-user">
          <p>Message User</p>
-         <input class="search-for-user" type="text" placeholder="Search for User" />
-         <textarea class="message-to-user" rows="10" placeholder="Message for User"></textarea>
+         <input class="search-for-user" id="user-box" type="text" placeholder="Search for User" />
+         <textarea class="message-to-user" id="msg-box" rows="10" placeholder="Message for User"></textarea>
+         <!-- SEND MESSAGE POPUP -->
+         <div class="popup-box" id="confirm-box">
+            <h1>Confirmed</h1>
+            <h3>Message sent!</h3>
+            <a class="send-btn-close" id="send-btn-close">Close</a>
+         </div>
+         <!-- ERROR MESSAGE POPUP -->
+         <div class="popup-box" id="err-confirm-box">
+            <h1>Error</h1>
+            <h3>You must fill out the User and the Message!</h3>
+            <a class="err-btn-close" id="err-btn-close">Close</a>
+         </div>
          <button class="btn-send">Send</button>
       </div>
       <!-- =-=-=-=-=-=-= SETTINGS =-=-=-=-=-=-=-=-=-=-=-=-=-= -->
@@ -306,7 +318,15 @@
             <option value="Pacific/Tongatapu">(GMT+13:00) Nuku'alofa</option>
             </selec>
          </select>
+
+         <!-- =-=-=-=-= POPUP FOR SAVE BUTTON (UPDATE) =-=-=-=-= -->
+         <div class="popup-box" id="save-box">
+            <h1>Confirmed</h1>
+            <h3>Settings saved!</h3>
+            <a class="save-btn-close" id="save-btn-close">Okay</a>
+         </div>
          <button class="btn-save">Save</button>
+
          <button class="btn-cancel">Cancel</button>
       </div>
       <!-- =-=-=-=-=-=-=-= END SETTINGS =-=-=-=-=-=-= -->

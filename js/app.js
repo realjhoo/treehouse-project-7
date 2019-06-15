@@ -264,6 +264,10 @@ function insertMemberActivity() {
    }
 }
 
+function showMessage(msg) {
+   alert(msg);
+}
+
 document.addEventListener("click", event => {
    // =-=-=-=-=-= MENU BAR =-=-=-=-=-=-=-=-=-=
    if (event.target.className == "nav-button") {
@@ -281,14 +285,49 @@ document.addEventListener("click", event => {
 
    // =-=-=-==-=-=-= CLICK NOTIFICATION BELL =-=-=-=-=-=-=-=
    if (event.target.tagName == "svg" || event.target.className == "msg-dot") {
-      // =-=-=-=-=-= HIDE MSG DOT - SHOW POPUP =-=-=-=-=-=
+      // =-=-=-=-=-= HIDE MSG DOT - SHOW NOTIFICATION POPUP =-=-=-=
       document.getElementById("msg-dot").style.display = "none";
       document.getElementById("popup").style.display = "block";
    }
 
-   // =-=-= CLICK POPUP ITEM =-=-=-=-=-=
+   // =-=-= CLICK POPUP NOTIFICATION ITEM =-=-=-=-=-=
    if (event.target.className == "menu") {
       document.getElementById("popup").style.display = "none";
+   }
+
+   // =-=-=-=-=-= SEND BUTTON POPUP =-=-=-=-=-=
+   if (event.target.className == "btn-send") {
+      // =-=-=-=-= ERROR CHK MESSAGE AND USER BEFORE SEND =-=-=-=-=
+      if (
+         document.getElementById("user-box").value == "" ||
+         document.getElementById("msg-box").value == ""
+      ) {
+         // ++++++ ERROR BOX +++++++++++
+         document.getElementById("err-confirm-box").style.display = "block";
+      } else {
+         document.getElementById("confirm-box").style.display = "block";
+      }
+   }
+
+   //  =-=-=-=-=-=-=-= SEND POPUP CLOSE BUTTON =-=-=-=-=-=
+   if (event.target.className == "send-btn-close") {
+      document.getElementById("confirm-box").style.display = "none";
+   }
+
+   // =-=-=-=-=-=-=-=-= ERR POPUP CLOSE =-=-=-=-=-=-=-=-=-=
+   if (event.target.className == "err-btn-close") {
+      document.getElementById("err-confirm-box").style = "none";
+   }
+
+   // =-=-=-=-=-=-=-=-=-=-=-= SAVE BUTTON POPUP =-=-=-=-=-=-=
+   if (event.target.className == "btn-save") {
+      // TODO ++++++ save the settings ++++++++++
+      document.getElementById("save-box").style.display = "block";
+   }
+
+   // =-=-=-=-=-=-=-=-=-= SAVE POPUP CLOSE BUTTON =-=-=-=-=-=-=-=-=-=-=
+   if (event.target.className == "save-btn-close") {
+      document.getElementById("save-box").style.display = "none";
    }
 });
 
