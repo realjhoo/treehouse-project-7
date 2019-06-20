@@ -94,7 +94,7 @@
 
          <ul class="chart-selector">
             <li>Hourly</li>
-            <li>Daily</li>
+            <li id="btn-daily">Daily</li>
             <li>Weekly</li>
             <li>Monthly</li>
          </ul>
@@ -232,11 +232,12 @@
          </div>
 
          <select class="timezone" name="timezone" id="timezones" placeholder="Select Timezone" name="timezone">
-            <option value="" disabled selected>Select Timezone</option>
-            <option value="Etc/GMT+12">(GMT-12:00) International Date Line West</option>
-            <option value="Pacific/Midway">(GMT-11:00) Midway Island, Samoa</option>
-            <option value="Pacific/Honolulu">(GMT-10:00) Hawaii</option>
-            <option value="US/Alaska">(GMT-09:00) Alaska</option>
+            <option value="0" selected>Select Timezone</option>
+            <option value="1">(GMT-12:00) International Date Line West</option>
+            <option value="2">(GMT-11:00) Midway Island, Samoa</option>
+            <!-- <option value="Pacific/Honolulu">(GMT-10:00) Hawaii</option> -->
+            <option value="3">(GMT-10:00) Hawaii</option>
+            <option value="4">(GMT-09:00) Alaska</option>
             <option value="America/Los_Angeles">(GMT-08:00) Pacific Time (US & Canada)</option>
             <option value="America/Tijuana">(GMT-08:00) Tijuana, Baja California</option>
             <option value="US/Arizona">(GMT-07:00) Arizona</option>

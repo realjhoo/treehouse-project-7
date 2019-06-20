@@ -78,13 +78,13 @@ p {
 
 ul li {
    float: left;
-   list-style: none;
    position: relative;
+   list-style: none;
 }
 
 ul li ul {
-   float: left;
    display: none; /* Hide until needed */
+   float: left;
    position: absolute;
    overflow: hidden;
    background-color: #e2e3f5;
@@ -96,9 +96,9 @@ ul li ul {
 }
 
 ul li ul li {
+   width: 280px;
    padding-top: 16px;
    padding-bottom: 8px;
-   width: 280px;
 }
 
 ul li ul li:hover {
@@ -111,8 +111,8 @@ ul li ul li a:active {
 }
 
 ul li ul li a {
-   text-decoration: none;
    font-size: 0.6em;
+   text-decoration: none;
    padding: 8px 14px;
 }
 
@@ -274,6 +274,8 @@ hr {
 }
 
 /* =-=-=-=-=-=-=-=-=-=-= CHARTS =-=-=-=-=-=-=-=-=-=-=-= */
+/* +++++++++++ THIS IS WHERE I LEFT OFF +++++++++++++ */
+/* ********************************************** */
 .chart-options {
    display: flex;
    position: relative;
@@ -293,13 +295,19 @@ hr {
    font-size: 0.75em;
    font-weight: bold;
    letter-spacing: 1.3px;
-   color: #666666;
-
+   color: #fff;
+   cursor: pointer;
+   outline: none;
    background-color: #81c98f;
    padding: 5px 10px 5px 10px;
    border-radius: 25px;
-
    margin-right: 10px;
+   margin-bottom: 25px;
+}
+
+.chart-selector li:hover {
+   background-color: #99eeaa;
+   color: #666666;
 }
 
 .lineChart {
@@ -558,24 +566,24 @@ hr {
    position: absolute;
    width: 450px;
    overflow: hidden;
+   text-align: center;
+   line-height: 32px;
    background-color: #e3e4f2;
    box-shadow: 0 0 15px #666;
-   border-radius: 5px;
-   text-align: center;
    padding: 10px;
-   line-height: 32px;
+   border-radius: 5px;
    margin-bottom: 30px;
 }
 
 .save-btn-close,
 .send-btn-close,
 .err-btn-close {
+   cursor: pointer;
    color: #fff;
    text-transform: uppercase;
    background-color: #7377bf;
    padding: 5px 10px;
    border-radius: 5px;
-   cursor: pointer;
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-= SETTINGS =-=-=-=-=-=-=-=-=-= */

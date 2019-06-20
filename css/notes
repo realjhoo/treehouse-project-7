@@ -1,21 +1,38 @@
 TODO
 
 
-Check Exceeds Requirements
+    Search for user box - add autocomplete
 
-    1. Make chart selectors work (daily, monthly etc)
-    2. Search for user box - add autocomplete
-    3. Use local storage to store settings for reload
-        Settings to save:
-            which line chart was selected
-            position of toggle switches
-            selected timezone
+    Make mobile friendly with media queries (ugh)
+        320 - 768 - 1024
 
-Make mobile friendly with media queries (ugh)
-    320 - 768 - 1024
+GET PEER HELP ON LINE CHART ISSUE
+++++++ NEED TO FIX ++++++++++
+
+Mouseover lineChart causes display of other data
 
 Detail check
 
 Validate code
 
 Submit for peer review
+
+
+LINE CHART ISSUE NOTES
+1. Load the page
+2. Select the Hourly, Daily and/or Monthly line chart
+3. Mouseover the line chart.
+=> The chart will randomly switch from the selected chart to any of the charts that have been previously viewed.
+
+Further info:
+The line chart is in its own function.
+The data and labels are global constants
+The function is called from the main procedure when the page loads and when one of the chart options (Hourly, Weekly, etc) are clicked. This is done from a single click event handler.
+
+Thoughts: Mousing over the chart causes it to reload or redraw. When that happens, it is accessing data that has been previously passed into the function (charts that havent been viewed do not randomly load, only charts that have been viewed).
+
+How can I either
+a) Isolate the data so that it is not visible to the createLineChart function
+b) Zero out the data so that it is no longer valid
+or
+c) Prevent the chart from responding to mouseover events

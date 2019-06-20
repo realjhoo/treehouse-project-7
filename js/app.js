@@ -1,45 +1,108 @@
 /* eslint-disable no-console */
 var first_run_flag = true;
 
-// =-=-=-=-=-=-=-=-=-=-=-=-= TRAFFIC CHART =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-function createLineChart() {
+// hourly data
+const hourlyLabels = [
+   "8am",
+   "9am",
+   "10am",
+   "11am",
+   "12pm",
+   "1pm",
+   "2pm",
+   "3pm",
+   "4pm",
+   "5pm",
+   "6pm",
+   "7pm"
+];
+const hourlyData = [8, 14, 2, 3, 2, 4, 3, 1, 1, 4, 8, 12];
+
+// daily data
+const dailyLabels = [
+   "Sunday",
+   "Monday",
+   "Tuesday",
+   "Wednesday",
+   "Thursday",
+   "Friday",
+   "Saturday"
+];
+const dailyData = [80, 25, 8, 15, 18, 42, 150];
+
+// weekly data
+const weeklyLabels = [
+   "Week 1",
+   "Week 2",
+   "Week 3",
+   "Week 4",
+   "Week 5",
+   "Week 6",
+   "Week 7",
+   "Week 8",
+   "Week 9",
+   "Week 10",
+   "Week 11",
+   "Week 12",
+   "Week 13"
+];
+const weeklyData = [
+   499,
+   750,
+   1250,
+   1000,
+   1500,
+   2000,
+   1500,
+   1750,
+   1250,
+   1750,
+   2250,
+   1750,
+   2250
+];
+
+// monthly data
+const monthlyLabels = [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "May",
+   "Jun",
+   "Jul",
+   "Aug",
+   "Sep",
+   "Oct",
+   "Nov",
+   "Dec"
+];
+const monthlyData = [
+   215,
+   190,
+   200,
+   315,
+   411,
+   872,
+   1005,
+   543,
+   427,
+   311,
+   212,
+   198
+];
+
+// =-=-=-==-=-=-=-= TRAFFIC CHART =-=-=-=-=-=-=-=-=-=-=-=-=-=
+function createLineChart(chrtLabels, chrtData) {
    // args to pass - datalabels, data
    let lineChart = null;
-   let chartLabel = [
-      "Week 1",
-      "Week 2",
-      "Week 3",
-      "Week 4",
-      "Week 5",
-      "Week 6",
-      "Week 7",
-      "Week 8",
-      "Week 9",
-      "Week 10",
-      "Week 11",
-      "Week 12",
-      "Week 13"
-   ];
-   let chartData = [
-      499,
-      750,
-      1250,
-      1000,
-      1500,
-      2000,
-      1500,
-      1750,
-      1250,
-      1750,
-      2250,
-      1750,
-      2250
-   ];
+   let chartLabel = chrtLabels;
+   let chartData = chrtData;
    let chartColor = "rgba(116, 119, 191, 0.2)";
    let chartBGcolor = "rgb(77, 76, 114)";
    let pointBGcolor = "rgb(240,240,240)";
    let ctx = document.getElementById("lineChart").getContext("2d");
-
+   console.log(monthlyData); // ===============
    lineChart = new Chart(ctx, {
       type: "line",
       data: {
@@ -57,16 +120,16 @@ function createLineChart() {
          ]
       },
       options: {
-         resonsive: true,
+         resonsive: false,
          scales: {
             yAxes: [
                {
                   ticks: {
-                     beginAtZero: false,
-                     stepValue: 500,
-                     startVale: 500,
-                     max: 2500,
-                     min: 500
+                     beginAtZero: false
+                     // stepValue: 500,
+                     // startVale: 500,
+                     // max: 2500,
+                     // min: 500
                   }
                }
             ],
@@ -264,8 +327,65 @@ function insertMemberActivity() {
    }
 }
 
-function showMessage(msg) {
-   alert(msg);
+function getSettings() {
+   // GET and SET EMAIL TOGGLE (IRL - this should be a function)
+   if (localStorage.getItem("yourapp_email_notification") === null) {
+      document.getElementById("myonoffswitch").checked = true;
+   } else {
+      // set the setting
+      let email_notification = localStorage.getItem(
+         "yourapp_email_notification"
+      );
+      if (email_notification === "true") {
+         document.getElementById("myonoffswitch").checked = true;
+      }
+      if (email_notification === "false") {
+         document.getElementById("myonoffswitch").checked = false;
+      }
+      if (email_notification !== "true" && email_notification !== "false") {
+         // key corrupted - EXTERMINATE!
+         localStorage.removeItem("yourapp_email_notification");
+      }
+   }
+
+   // GET AND SET PROFILE TOGGLE
+   if (localStorage.getItem("yourapp_profile_public") === null) {
+      document.getElementById("myonoffswitch2").checked = true;
+   } else {
+      // set the setting
+      let profile_public = localStorage.getItem("yourapp_profile_public");
+
+      if (profile_public === "true") {
+         document.getElementById("myonoffswitch2").checked = true;
+      }
+      if (profile_public === "false") {
+         document.getElementById("myonoffswitch2").checked = false;
+      }
+      if (profile_public !== "true" && profile_public !== "false") {
+         // key corrupted - EXTERMINATE!
+         localStorage.removeItem("yourapp_profile_public");
+      }
+   }
+
+   // GET AND SET TIMEZONE
+   let timezone = localStorage.getItem("timezone");
+   console.log("Timezone: " + timezone);
+   if (timezone === null) {
+      document.getElementById("timezones").value = 0;
+   } else {
+      // set the setting
+      document.getElementById("timezones").value = timezone;
+   }
+}
+
+function saveSettings() {
+   // SAVE THE SETTIMNGS TO LOCAL STORAGE
+   let email_notification = document.getElementById("myonoffswitch").checked;
+   localStorage.setItem("yourapp_email_notification", email_notification);
+   let public_profile = document.getElementById("myonoffswitch2").checked;
+   localStorage.setItem("yourapp_profile_public", public_profile);
+   let timezone = document.getElementById("timezones").value;
+   localStorage.setItem("timezone", timezone);
 }
 
 document.addEventListener("click", event => {
@@ -294,6 +414,27 @@ document.addEventListener("click", event => {
    if (event.target.className == "menu") {
       document.getElementById("popup").style.display = "none";
    }
+   // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   // =-=-=-=-=-=-= CHART OPTIONS =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+   // +++ HOURLY +++
+   let selectChart = event.target.innerText;
+   if (selectChart == "Hourly") {
+      createLineChart(hourlyLabels, hourlyData);
+   }
+   // +++ DAILY +++
+   if (selectChart == "Daily") {
+      createLineChart(dailyLabels, dailyData);
+   }
+
+   // +++ WEEKLY +++
+   if (selectChart == "Weekly") {
+      createLineChart(weeklyLabels, weeklyData);
+   }
+
+   // +++ MONTHLY +++
+   if (selectChart == "Monthly") {
+      createLineChart(monthlyLabels, monthlyData);
+   }
 
    // =-=-=-=-=-= SEND BUTTON POPUP =-=-=-=-=-=
    if (event.target.className == "btn-send") {
@@ -319,9 +460,10 @@ document.addEventListener("click", event => {
       document.getElementById("err-confirm-box").style = "none";
    }
 
-   // =-=-=-=-=-=-=-=-=-=-=-= SAVE BUTTON POPUP =-=-=-=-=-=-=
+   // =-=-=-=-=-=-=-=-=-=-=-= SAVE BUTTON Save & POPUP =-=-=-=-=-=-=
    if (event.target.className == "btn-save") {
-      // TODO ++++++ save the settings ++++++++++
+      // TODO call the saveSettings function here +++++++++++++
+      saveSettings();
       document.getElementById("save-box").style.display = "block";
    }
 
@@ -355,11 +497,16 @@ document.addEventListener("mouseout", event => {
    }
 });
 
+window.addEventListener("resize", event => {
+   document.location.reload(true);
+});
+
 // =-=-=-=-=-=-=-= MAIN PROCEDURE =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-createLineChart();
+createLineChart(weeklyLabels, weeklyData);
 createBarChart();
 createDonutChart();
 insertMemberActivity();
+getSettings();
 
 window.onload = function() {
    if (first_run_flag) {
