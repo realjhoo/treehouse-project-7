@@ -3,8 +3,25 @@ TODO
 
     Search for user box - add autocomplete
 
+    AUTOCOMPLETE NOTES =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    states example
+    str = str.lowerCase(); // convert state name to lowerCase
+    for (var i= 0; i < states.length; i++){
+        if (states[i].toLowerCase().startsWith(str)) {
+            $(".dialog").append("<div>" + states[i] + "</div>);
+            // jquerey... need plain js for this line
+            cat string and add to list to display
+        }
+    }
+    // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
     Make mobile friendly with media queries (ugh)
         320 - 768 - 1024
+        Ideas
+        Replace side nav bar with hamburger menu
+        reduce base em from 16 to 14 or 12
+        stacked grid at 320px
+
 
 GET PEER HELP ON LINE CHART ISSUE
 ++++++ NEED TO FIX ++++++++++
@@ -36,3 +53,45 @@ a) Isolate the data so that it is not visible to the createLineChart function
 b) Zero out the data so that it is no longer valid
 or
 c) Prevent the chart from responding to mouseover events
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+SCRAPS
+
+  let search_results = [];
+
+   // someone is typing in the search box
+   // on focus display the array-box
+   // size of array box = contents of array
+   let search_string = user_search.value;
+   for (i = 0; i < users.length; i++) {
+      if (users[i].includes(search_string)) {
+         users[i] = users[i].replace(",", "x");
+         search_results.push(users[i] + "\n");
+      } // if
+   } // for loop
+   // place output in search results box
+   document.getElementById("results-box").value = search_results;
+
+   console.log(search_results);
+   // loss of focus or "enter" = hide the array-box and
+   //    add the top match (or the selected match) to user_serch.value
+   //    which should also clear the array
+
+   .results-box {
+   position: absolute;
+   top: 80px;
+   left: 25px;
+   width: 90%;
+   height: 120px;
+   font-size: 1em;
+   line-height: 1.5em;
+   color: #666;
+   background-color: #fafafa;
+   resize: none;
+   box-shadow: 0 0 10px #333;
+}
+
+ <textarea class="results-box" id="results-box"></textarea>

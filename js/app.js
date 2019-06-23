@@ -1,7 +1,10 @@
 /* eslint-disable no-console */
-var first_run_flag = true;
 
-// hourly data
+// GLOBAL VARIABLES
+var first_run_flag = true;
+user_search = document.getElementById("user-box");
+
+// GLOBAL CONSTANTS
 const hourlyLabels = [
    "8am",
    "9am",
@@ -17,8 +20,6 @@ const hourlyLabels = [
    "7pm"
 ];
 const hourlyData = [8, 14, 2, 3, 2, 4, 3, 1, 1, 4, 8, 12];
-
-// daily data
 const dailyLabels = [
    "Sunday",
    "Monday",
@@ -29,8 +30,6 @@ const dailyLabels = [
    "Saturday"
 ];
 const dailyData = [80, 25, 8, 15, 18, 42, 150];
-
-// weekly data
 const weeklyLabels = [
    "Week 1",
    "Week 2",
@@ -61,8 +60,6 @@ const weeklyData = [
    1750,
    2250
 ];
-
-// monthly data
 const monthlyLabels = [
    "Jan",
    "Feb",
@@ -92,18 +89,17 @@ const monthlyData = [
    198
 ];
 
-// =-=-=-==-=-=-=-= TRAFFIC CHART =-=-=-=-=-=-=-=-=-=-=-=-=-=
+// =-=-=-==-=-=-=-= CHARTS =-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 function createLineChart(chrtLabels, chrtData) {
-   // args to pass - datalabels, data
-   let lineChart = null;
+   // let lineChart = null;
    let chartLabel = chrtLabels;
    let chartData = chrtData;
    let chartColor = "rgba(116, 119, 191, 0.2)";
    let chartBGcolor = "rgb(77, 76, 114)";
    let pointBGcolor = "rgb(240,240,240)";
    let ctx = document.getElementById("lineChart").getContext("2d");
-   console.log(monthlyData); // ===============
-   lineChart = new Chart(ctx, {
+
+   let lineChart = new Chart(ctx, {
       type: "line",
       data: {
          labels: chartLabel,
@@ -151,7 +147,6 @@ function createLineChart(chrtLabels, chrtData) {
    });
 }
 
-// =-=-=-=-=-=-=-=-=-=-= BAR CHART =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 function createBarChart() {
    let chartLabel = ["S", "M", "T", "W", "T", "F", "S"];
    let chartData = [75, 100, 175, 125, 225, 200, 100];
@@ -200,15 +195,12 @@ function createBarChart() {
    });
 }
 
-// =-=-=-=-=-=-=-= MOBILE USER CHART =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 function createDonutChart() {
-   //
    let chartLabel = ["Phones", "Tablets", "Desktop"];
    let chartData = [75, 50, 350];
    let phoneDataColor = "rgb(129, 201, 143)";
    let tabletDataColor = "rgb(116, 177, 191)";
    let desktopDataColor = "rgb(116, 119, 191)";
-   //
    let ctx = document.getElementById("donutChart").getContext("2d");
    let donutChart = new Chart(ctx, {
       type: "doughnut",
@@ -283,13 +275,13 @@ function insertMemberActivity() {
    ];
 
    for (let i = 0; i < newMemberData.length; i++) {
-      // GET TARGET DIV & CREATE CONTAINER for MEMBER DATA =-=-=-=-=-=
+      // GET TARGET DIV & CREATE CONTAINER for MEMBER DATA =-=-=-=
       let new_member_wrapper = document.getElementById("new-member-wrapper");
       let member_div = document.createElement("div");
       member_div.setAttribute("class", "member-div");
       new_member_wrapper.appendChild(member_div);
 
-      // =-=-=-=-= SET MEMBER AVATER IMAGE =-=-=-=-=-=-=-=-=-=-=-=
+      // =-=-=-=-= SET MEMBER AVATER IMAGE =-=-=-=-=-=-=-=-=-=
       let member_image = document.createElement("img");
       member_image.setAttribute("src", newMemberData[i].image);
       member_image.setAttribute("class", "member-avatar");
@@ -308,19 +300,19 @@ function insertMemberActivity() {
       activity_div.setAttribute("class", "activity-div");
       recent_activity_wrapper.appendChild(activity_div);
 
-      // =-=-=-=-=-=-=-=-=-= INSERT MEMBER AVATAR =-=-=-=-=-=-=-=-=-=
+      // =-=-=-=-=-=-=-=-=-= INSERT MEMBER AVATAR =-=-=-=-=-=-=
       member_image = document.createElement("img");
       member_image.setAttribute("src", newMemberData[i].image);
       member_image.setAttribute("class", "member-avatar");
       activity_div.appendChild(member_image);
 
-      // -=-=-=-=-=-=-= CREATE COMMENT DIV and INSERT COMMENT =-=-=-=-=-=-=
+      // =-=-=-= CREATE COMMENT DIV and INSERT COMMENT =-=-=-=-=
       let comment_div = document.createElement("div"); //may need class
       activity_div.appendChild(comment_div);
       let memberComment =
          newMemberData[i].name + " " + newMemberData[i].message;
 
-      // =-=-= INSERT COMMENT, TIME and ARROW POINTER =-=-=-=-=-=-=-=
+      // =-=-= INSERT COMMENT, TIME and ARROW POINTER =-=-=-=-=-=
       newElement("p", "member-comment", memberComment, comment_div);
       newElement("p", "time-ago", newMemberData[i].time, activity_div);
       newElement("p", "greater-than", "＞", activity_div);
@@ -328,7 +320,7 @@ function insertMemberActivity() {
 }
 
 function getSettings() {
-   // GET and SET EMAIL TOGGLE (IRL - this should be a function)
+   // GET and SET EMAIL TOGGLE
    if (localStorage.getItem("yourapp_email_notification") === null) {
       document.getElementById("myonoffswitch").checked = true;
    } else {
@@ -369,7 +361,6 @@ function getSettings() {
 
    // GET AND SET TIMEZONE
    let timezone = localStorage.getItem("timezone");
-   console.log("Timezone: " + timezone);
    if (timezone === null) {
       document.getElementById("timezones").value = 0;
    } else {
@@ -379,15 +370,26 @@ function getSettings() {
 }
 
 function saveSettings() {
-   // SAVE THE SETTIMNGS TO LOCAL STORAGE
+   // SAVE THE SETTINGS TO LOCAL STORAGE
    let email_notification = document.getElementById("myonoffswitch").checked;
-   localStorage.setItem("yourapp_email_notification", email_notification);
    let public_profile = document.getElementById("myonoffswitch2").checked;
-   localStorage.setItem("yourapp_profile_public", public_profile);
    let timezone = document.getElementById("timezones").value;
+
+   localStorage.setItem("yourapp_email_notification", email_notification);
+   localStorage.setItem("yourapp_profile_public", public_profile);
    localStorage.setItem("timezone", timezone);
 }
 
+function showResults(show) {
+   search_results = document.getElementById("search-results");
+
+   if (show == "yes") {
+      search_results.classList.add("visible");
+   } else if (show == "no") {
+      search_results.classList.remove("visible");
+   }
+}
+// =-=-=-=-= EVENT LISTENERS =-=-=-=-=-=-=-=-=-=
 document.addEventListener("click", event => {
    // =-=-=-=-=-= MENU BAR =-=-=-=-=-=-=-=-=-=
    if (event.target.className == "nav-button") {
@@ -425,12 +427,10 @@ document.addEventListener("click", event => {
    if (selectChart == "Daily") {
       createLineChart(dailyLabels, dailyData);
    }
-
    // +++ WEEKLY +++
    if (selectChart == "Weekly") {
       createLineChart(weeklyLabels, weeklyData);
    }
-
    // +++ MONTHLY +++
    if (selectChart == "Monthly") {
       createLineChart(monthlyLabels, monthlyData);
@@ -462,7 +462,6 @@ document.addEventListener("click", event => {
 
    // =-=-=-=-=-=-=-=-=-=-=-= SAVE BUTTON Save & POPUP =-=-=-=-=-=-=
    if (event.target.className == "btn-save") {
-      // TODO call the saveSettings function here +++++++++++++
       saveSettings();
       document.getElementById("save-box").style.display = "block";
    }
@@ -501,12 +500,91 @@ window.addEventListener("resize", event => {
    document.location.reload(true);
 });
 
-// =-=-=-=-=-=-=-= MAIN PROCEDURE =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-createLineChart(weeklyLabels, weeklyData);
-createBarChart();
-createDonutChart();
-insertMemberActivity();
-getSettings();
+user_search.addEventListener("keydown", event => {
+   const enter = 13,
+      arrow_dn = 40;
+   let search_results = document.getElementById("search-results");
+
+   if (event.keyCode == enter) {
+      // place top value in box
+      user_search.value = search_results.children[0].innerHTML;
+   }
+
+   if (event.keyCode == arrow_dn) {
+      document.getElementById("search-results").focus();
+   }
+
+   if (event.keyCode != arrow_dn) {
+      search_results.options.length = 0;
+   }
+});
+
+user_search.addEventListener("keyup", event => {
+   const user = [
+      "Victoria Chambers",
+      "Dale Byrd",
+      "Dawn Wood",
+      "Dan Oliver",
+      "George Tres",
+      "Alfred LeGrand",
+      "Charles Kopflos",
+      "Henry Plantagenet",
+      "Jasmine Gato",
+      "Merrell Zapato",
+      "Hope Kopfuber",
+      "Oswald Mostly"
+   ];
+   const enter = 13,
+      arrow_up = 38,
+      arrow_dn = 40,
+      backspace = 8,
+      a_key = 65,
+      z_key = 90;
+
+   let match = [];
+   let search_string = user_search.value;
+   let search_results = document.getElementById("search-results");
+
+   if (
+      (event.keyCode >= a_key && event.keyCode <= z_key) ||
+      event.keyCode == backspace
+   ) {
+      search_results.style.display = "block";
+
+      for (i = 0; i < user.length; i++) {
+         if (user[i].includes(search_string)) {
+            // +++++++++++++++++++++++++++++++++++++++++++++++++++++
+            console.log("User " + i + ": " + user[i]);
+            // +++++++++++++++++++++++++++++++++++++++++++++++++++++
+            option = document.createElement("OPTION");
+            option.innerHTML = user[i];
+            search_results.appendChild(option);
+         } // if
+      } // for loop
+   } // if
+
+   // clear the box if search deleted
+   if (user_search.value.length == 0) {
+      search_results.options.length = 0;
+      search_results.style.display = "none";
+   }
+
+   // select result and hide box if user hits ENTER
+   if (event.keyCode == enter) {
+      // place top value in box
+      if (search_results.children[0] != null) {
+         user_search.value = search_results.children[0].innerHTML;
+      }
+      // user_search.value = "";
+      search_results.style.display = "none";
+   }
+   // after focus is set to search_results
+   // first item should be highlighted
+   // create listener for search_results so that
+   //    it can respond to enetr of click on highlighted item
+   //    arrow up on top shifts focus back to user_search
+   //
+});
 
 window.onload = function() {
    if (first_run_flag) {
@@ -515,3 +593,14 @@ window.onload = function() {
       first.style.borderLeftStyle = "solid";
    }
 };
+
+// =-=-=-=-=-=-=-= MAIN PROCEDURE =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+function main() {
+   createLineChart(weeklyLabels, weeklyData);
+   createBarChart();
+   createDonutChart();
+   insertMemberActivity();
+   getSettings();
+}
+
+main();

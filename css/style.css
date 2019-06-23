@@ -525,6 +525,7 @@ hr {
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-= MESSAGE USER =-=-=-=-=-=-=-=-=-=-=-= */
 .message-user {
+   position: relative;
    grid-area: message;
    border: 1px solid #d8d8d7;
 }
@@ -544,6 +545,20 @@ hr {
 
 ::placeholder {
    color: #bbbbbb;
+}
+
+.search-results-box {
+   display: none;
+   position: absolute;
+   top: 90px;
+   left: 25px;
+   width: 90%;
+   height: 120px;
+   font-size: 1em;
+   line-height: 1.5em;
+   color: #666;
+   background-color: #fafafa;
+   box-shadow: 0 0 10px #333;
 }
 
 .message-to-user {
