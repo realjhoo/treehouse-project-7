@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Exo:400,700");
 
+/* 320px  768px and 1024px */
+
 /* =-=-=-=-=-=-=-=-=-=-= GENERAL RULES =-=-=-=-=-=-=-=-=-=-=-=-= */
 * {
    box-sizing: border-box;
@@ -18,9 +20,8 @@ a {
 
 p {
    text-transform: uppercase;
-   padding-top: 10px;
-   padding-bottom: 10px;
-   padding-left: 25px;
+   padding: 5px 0px 5px 25px;
+
    font-size: 0.9em;
 }
 
@@ -31,21 +32,26 @@ p {
    grid-auto-rows: auto;
    grid-template-areas:
       "head head head"
-      "nav tab search"
-      "nav alert alert"
-      "nav chart1 chart1"
-      "nav chart2 chart3"
-      "nav socials socials"
-      "nav new-mems recent"
-      "nav message settings";
+      "nav nav nav"
+      "tab tab tab"
+      "search search search"
+      "alert alert alert"
+      "chart1 chart1 chart1"
+      "chart2 chart2 chart2"
+      "chart3 chart3 chart3"
+      "socials socials socials"
+      "new-mems new-mems new-mems"
+      "recent recent recent"
+      "message message message"
+      "settings settings settings";
 }
 
-/* =-=-=-=-=-=-=-=-=-=-= GRID HEADER =-=-=-=-=-=-=-=-=-=-=-=-=-= */
+/* =-=-=-=-=-=-=-=-=-=-= BODY  =-=-=-=-=-=-=-=-=-=-=-=-=-= */
 .header {
    grid-area: head;
    display: flex;
-   height: 75px;
-   font-size: 1.3em;
+   height: 40px;
+   font-size: 0.8em;
    color: #ffffff;
    background-color: #7477bf;
 }
@@ -71,7 +77,7 @@ p {
    flex-wrap: nowrap;
    justify-content: flex-end;
    align-items: center;
-   width: 86%;
+   width: 90%;
 }
 
 /*  =-=-=-=-=-=-=-=-=-= DROPDOWN MENU =-=-=-=-=-=-=-= */
@@ -90,15 +96,16 @@ ul li ul {
    background-color: #e2e3f5;
    box-shadow: 3px 15px 15px #666;
    border-radius: 0 0 5px 5px;
-   margin-top: 22px;
-   margin-left: -90px;
+   margin-top: 8px;
+   margin-left: -240px;
    z-index: 2;
 }
 
 ul li ul li {
-   width: 280px;
-   padding-top: 16px;
-   padding-bottom: 8px;
+   font-size: 1.5em;
+   width: 255px;
+   padding-top: 4px;
+   padding-bottom: 4px;
 }
 
 ul li ul li:hover {
@@ -128,41 +135,42 @@ ul li ul li a {
    transition: transform 0.3s ease-out;
    height: 1em;
    width: 1em;
-   margin-right: 10px;
+   margin-right: 0px;
+   margin-top: 6px;
 }
 
 .msg-dot {
-   font-size: 0.6em;
+   font-size: 0.3em;
    color: #7477bf;
    background-color: #81c98f;
    border-radius: 50%;
-   height: 18px;
-   width: 20px;
+   height: 14px;
+   width: 14px;
    text-align: center;
-   margin-left: -24px;
-   margin-top: -5px;
+   margin-left: -10px;
 }
 
 hr {
    width: 0px;
    height: 2em;
-   margin-right: 15px;
-   margin-left: 15px;
+   margin-right: 12px;
+   margin-left: 12px;
 }
 
 .avatar {
-   height: 36px;
-   width: 36px;
+   height: 20px;
+   width: 20px;
    border-radius: 50%;
 }
 
 .user-name {
-   font-size: 0.6em;
-   padding-left: 10px;
+   visibility: hidden;
+   width: 30px;
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-= NAV BAR =-=-=-=-=-=-=-=-=-=-= */
 .navbar {
+   display: flex;
    grid-area: nav;
    background-color: #4d4c72;
 }
@@ -172,13 +180,14 @@ hr {
 #ico-visits,
 #ico-settings {
    display: flex;
-   height: 35px;
-   width: 100px;
-   min-width: 35px;
-   min-height: 35px;
+   flex-direction: row;
+   height: 24px;
+   width: 100%;
+   min-width: 24px;
+   min-height: 24px;
    padding-left: 12px;
-   padding-right: 14px;
-   margin: 15px auto 35px auto;
+   padding-right: 12px;
+   margin: 8px auto 8px auto;
    opacity: 0.4;
 }
 
@@ -192,17 +201,18 @@ hr {
 
 .alert-bar {
    grid-area: alert;
-   font-size: 0.9em;
+   font-size: 0.7em;
    color: #ffffff;
    background-color: #7377bf;
    vertical-align: middle;
-   line-height: 38px;
-   padding-left: 12px;
+   line-height: 18px;
+   padding-top: 8px;
    padding-right: 12px;
+   padding-left: 12px;
    border-radius: 5px;
-   margin-top: 12px;
-   margin-left: 20px;
-   margin-right: 20px;
+   margin-top: 55px;
+   margin-left: 18px;
+   margin-right: 18px;
 }
 
 .alert {
@@ -214,33 +224,25 @@ hr {
    float: right;
    font-size: 2em;
    cursor: default;
+   padding-bottom: 6px;
 }
 
 .close-btn:hover {
    color: #b2b1b2;
 }
 
-/* =-=-=-=-=-=-=-=-=-= TAB and SEARCH =-=-=-=-=-=-=-=-= */
+/* =-= TAB & SEARCH =-= */
 
 .tab-wrapper {
    display: flex;
 }
 
 .tab {
-   grid-area: tab;
-   font-size: 1.2em;
-   height: 3em;
-   line-height: 3em;
-   background-color: white;
-   padding-left: 1em;
-   border-right: 1px solid #b2b1b2;
-   width: 52%;
+   display: none;
 }
 
 .tab-filler {
-   background-color: #fbfbfb;
-   border-bottom: 1px solid #b2b1b2;
-   width: 100%;
+   display: none;
 }
 
 .search-wrapper {
@@ -255,7 +257,7 @@ hr {
 
 .inpt-search {
    position: absolute;
-   left: calc(100% - 320px);
+   left: calc(100% - 310px);
    height: 2.8em;
    line-height: 2.8em;
    width: 300px;
@@ -269,17 +271,15 @@ hr {
    padding-left: 12px;
    border: 1px solid #dbdbdb;
    border-radius: 5px;
-   margin-top: 6px;
+   margin-top: 8px;
    z-index: 1;
 }
 
 /* =-=-=-=-=-=-=-=-=-=-= CHARTS =-=-=-=-=-=-=-=-=-=-=-= */
-/* +++++++++++ THIS IS WHERE I LEFT OFF +++++++++++++ */
-/* ********************************************** */
 .chart-options {
    display: flex;
    position: relative;
-   top: 2.2em;
+   top: 0.2em;
 }
 
 .chart-selector {
@@ -287,7 +287,7 @@ hr {
    justify-content: flex-end;
    flex-wrap: nowrap;
    align-items: center;
-   margin-right: 20px;
+   margin-right: 4px;
    list-style-type: none;
 }
 
@@ -342,23 +342,23 @@ hr {
    grid-template-areas:
       "s-stats s-stats s-stats"
       "s-maldekstro s-mezo s-dekstro";
-   grid-gap: 25px;
+   grid-gap: 12px;
    color: #7377bf;
-   padding-bottom: 3em;
+   padding-bottom: 1.2em;
    border: 1px solid #d8d8d7;
 }
 
 /* The h2 title of this box */
 .stats {
    grid-area: s-stats;
-   color: #666666;
-   margin-top: 1.2em;
+   color: #666;
+   margin-top: 0.6em;
 }
 
 /* The twitter box */
 .social-maldekstro {
    grid-area: s-maldekstro;
-   margin-left: 1.4em;
+   margin-left: 0.2em;
 }
 
 /* the facebook box */
@@ -369,7 +369,7 @@ hr {
 /* the google box */
 .social-dekstro {
    grid-area: s-dekstro;
-   margin-right: 1.4em;
+   margin-right: 0.2em;
 }
 
 .social-maldekstro,
@@ -389,29 +389,29 @@ hr {
 .ico-fb,
 .ico-goog {
    grid-area: ico;
-   width: 72px;
-   height: 72px;
+   width: 36px;
+   height: 36px;
    fill: #fefefe;
    background-color: #7377bf;
    border-radius: 50%;
-   padding: 15px;
-   margin: 15px;
+   padding: 4px;
+   margin: 4px;
 }
 
 /* social media titles inside boxes */
 .social-media {
    grid-area: s-media;
-   font-size: 1.2em;
-   margin-top: 20px;
+   font-size: 0.7em;
+   margin-top: 8px;
 }
 
 /* number inside social media boxes */
 .num {
    grid-area: num;
-   font-size: 2em;
+   font-size: 0.7em;
    font-weight: 400;
-   color: #666666;
-   margin-top: -15px;
+   color: #666;
+   margin-top: -8px;
 }
 
 /* =-=-=-=-=-=-= NEW MEMBERS =-=-=-=-=-=-=-=-=-=-=-=-= */
@@ -421,7 +421,7 @@ hr {
 
 .member-div {
    display: grid;
-   grid-template-columns: 20px 75% 5%;
+   grid-template-columns: 15px 75% 5%;
    grid-template-areas:
       "ava name date"
       "ava email date";
@@ -445,8 +445,8 @@ hr {
 
 .member-avatar {
    grid-area: ava;
-   width: 35px;
-   height: 35px;
+   width: 25px;
+   height: 25px;
    border-radius: 50%;
    margin: auto 0 auto 10px;
 }
@@ -454,7 +454,7 @@ hr {
 .member-name,
 .member-comment {
    grid-area: name;
-   font-size: 0.8em;
+   font-size: 0.7em;
    text-transform: capitalize;
    padding: 10px 0 0 30px;
 }
@@ -464,15 +464,15 @@ hr {
    grid-area: email;
    text-transform: lowercase;
    color: #7377bf;
-   font-size: 0.7em;
+   font-size: 0.6em;
    padding: 0 0 10px 30px;
 }
 
 .member-date,
 .greater-than {
    grid-area: date;
-   font-size: 0.7em;
-   margin: auto 0;
+   font-size: 0.6em;
+   margin: auto -7px auto -20px;
 }
 
 /* =-=-=-=-=-=-= RECENT ACTIVITY =-=-=-=-=-=-=-=-=-=-=-=-= */
@@ -483,7 +483,7 @@ hr {
 
 .activity-div {
    display: grid;
-   grid-template-columns: 20px 75% 5%;
+   grid-template-columns: 15px 75% 5%;
    grid-template-areas:
       "ava comment g-than"
       "ava time g-than";
@@ -506,7 +506,7 @@ hr {
 
 .member-comment {
    grid-area: comment;
-   font-size: 0.7em;
+   font-size: 0.6em;
    text-transform: initial;
 }
 
@@ -518,9 +518,10 @@ hr {
 .greater-than {
    grid-area: g-than;
    color: #7377bf;
-   font-size: 1.5em;
+   font-size: 1em;
    padding-top: 0;
    padding-bottom: 0;
+   margin-left: 12px;
 }
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-= MESSAGE USER =-=-=-=-=-=-=-=-=-=-=-= */
@@ -553,12 +554,13 @@ hr {
    top: 90px;
    left: 25px;
    width: 90%;
-   height: 120px;
+   height: 125px;
    font-size: 1em;
    line-height: 1.5em;
    color: #666;
    background-color: #fafafa;
    box-shadow: 0 0 10px #333;
+   border-radius: 5px;
 }
 
 .message-to-user {
@@ -579,10 +581,11 @@ hr {
 .popup-box {
    display: none;
    position: absolute;
-   width: 450px;
+   font-size: 12px;
+   width: 300px;
    overflow: hidden;
    text-align: center;
-   line-height: 32px;
+   line-height: 24px;
    background-color: #e3e4f2;
    box-shadow: 0 0 15px #666;
    padding: 10px;
@@ -590,10 +593,15 @@ hr {
    margin-bottom: 30px;
 }
 
+.popup-box h1 {
+   font-size: 1.5em;
+}
+
 .save-btn-close,
 .send-btn-close,
 .err-btn-close {
    cursor: pointer;
+   font-size: 10px;
    color: #fff;
    text-transform: uppercase;
    background-color: #7377bf;
@@ -616,7 +624,7 @@ hr {
       "label2   switch2";
 }
 
-/* =-=-=-=-=-=-= BEGIN ON-OFF SWITCHES =-=-=-=-=-=-=-=-= */
+/* =-=-=-=-=-=-=-=-=-=-=-= ON-OFF SWITCHES =-=-=-=-=-=-=-=-= */
 .onoffswitch {
    grid-area: "switch1";
 }
@@ -755,4 +763,414 @@ hr {
 .btn-cancel {
    background-color: #b2b1b2;
 }
-/* =-=-=-=-=-=-=-=-= END OF GRID ITEMS =-=-=-=-=-=-=-=-=-=-=-=-= */
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/*                MEDIA Q    768                          */
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+@media (min-width: 768px) {
+   p {
+      padding: 10px 0 10px 25px;
+   }
+
+   .grid-container {
+      grid-auto-columns: 80px 1fr 1fr;
+
+      grid-template-areas:
+         "head head head"
+         "nav tab search"
+         "nav alert alert"
+         "nav chart1 chart1"
+         "nav chart2 chart3"
+         "nav socials socials"
+         "nav new-mems recent"
+         "nav message settings";
+   }
+   /* =-=-=-=-=-=-=-=-=-=-= GRID HEADER =-=-=-=-=-=-=-=-=-=-=-=-=-= */
+   .header {
+      height: 45px;
+      font-size: 1.1em;
+   }
+
+   .header-dekstra {
+      width: 86%;
+   }
+
+   /* =-=-= DROPDOWN MENU =-= */
+
+   ul li ul {
+      margin-top: 22px;
+      margin-left: -90px;
+      z-index: 2;
+   }
+
+   ul li ul li {
+      font-size: 0.6em;
+      width: 280px;
+      padding-top: 16px;
+      padding-bottom: 8px;
+   }
+
+   .ico-bell {
+      font-size: 1em;
+
+      margin-right: 10px;
+   }
+
+   .msg-dot {
+      font-size: 0.4em;
+      height: 15px;
+      width: 15px;
+      margin-top: -6px;
+      margin-left: -22px;
+   }
+
+   hr {
+      margin-right: 15px;
+      margin-left: 15px;
+   }
+
+   .avatar {
+      height: 1.4em;
+      width: 1.4em;
+   }
+
+   .user-name {
+      visibility: visible;
+      width: 92px;
+      font-size: 0.6em;
+      padding-left: 10px;
+   }
+
+   .navbar {
+      display: block;
+   }
+
+   #ico-dashboard,
+   #ico-members,
+   #ico-visits,
+   #ico-settings {
+      flex-direction: column;
+      height: 30px;
+      width: 100px;
+      min-width: 25px;
+      min-height: 25px;
+      padding-left: 10px;
+      padding-right: 22px;
+      margin: 15px auto 35px auto;
+   }
+   .alert-bar {
+      font-size: 0.7em;
+      line-height: 28px;
+      padding-top: 0;
+      margin-top: 12px;
+   }
+
+   .close-btn {
+      padding-bottom: 0;
+   }
+
+   /* =-= TAB & SEARCH =-= */
+
+   .tab {
+      display: block;
+      grid-area: tab;
+      width: 52%;
+      font-size: 1.2em;
+      height: 3em;
+      line-height: 3em;
+      background-color: white;
+      padding-right: 1em;
+      padding-left: 1em;
+      border-right: 1px solid #b2b1b2;
+   }
+
+   .tab-filler {
+      display: block;
+      background-color: #fbfbfb;
+      border-bottom: 1px solid #b2b1b2;
+      width: 100%;
+   }
+
+   .chart-options {
+      top: 2.2em;
+   }
+
+   .chart-selector {
+      margin-right: 20px;
+   }
+
+   .inpt-search {
+      left: calc(100% - 320px);
+      height: 2.5em;
+      line-height: 2.5em;
+      font-size: 0.8em;
+      margin-top: 14px;
+   }
+
+   .social-stats {
+      grid-gap: 25px;
+      padding-bottom: 3em;
+   }
+
+   /* The h2 title of this box */
+   .stats {
+      margin-top: 1.2em;
+   }
+
+   /* The twitter box */
+   .social-maldekstro {
+      margin-left: 1.4em;
+   }
+
+   /* the google box */
+   .social-dekstro {
+      margin-right: 1.4em;
+   }
+
+   .ico-twit,
+   .ico-fb,
+   .ico-goog {
+      width: 60px;
+      height: 60px;
+   }
+
+   /* social media titles inside boxes */
+   .social-media {
+      font-size: 1em;
+      margin-top: 20px;
+   }
+
+   /* number inside social media boxes */
+   .num {
+      font-size: 1.5em;
+   }
+
+   .member-div {
+      grid-template-columns: 20px 75% 5%;
+   }
+
+   .member-date,
+   .greater-than {
+      margin: auto 0;
+   }
+
+   .activity-div {
+      grid-template-columns: 20px 75% 5%;
+   }
+
+   .greater-than {
+      margin-left: 0;
+   }
+
+   .popup-box {
+      font-size: 14px;
+      width: 365px;
+
+      line-height: 28px;
+   }
+
+   .popup-box h1 {
+      font-size: 1.8em;
+   }
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/*                MEDIA Q    1024                         */
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+@media (min-width: 1024px) {
+   /* =-=-=-=-=-=-=-=-=-=-= GRID CONTAINER =-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+   .grid-container {
+      grid-auto-columns: 100px 1fr 1fr;
+   }
+
+   /* =-=-=-=-=-=-=-=-=-=-= GRID HEADER =-=-=-=-=-=-=-=-=-=-=-=-=-= */
+   .header {
+      height: 75px;
+      font-size: 1.3em;
+   }
+
+   /*  =-=-=-=-=-=-=-=-=-= DROPDOWN MENU =-=-=-=-=-=-=-= */
+
+   .ico-bell {
+      font-size: 1.2em;
+
+      margin-top: 0;
+   }
+
+   .msg-dot {
+      font-size: 0.6em;
+      height: 18px;
+      width: 20px;
+      margin-top: -5px;
+      margin-left: -24px;
+   }
+
+   .avatar {
+      height: 36px;
+      width: 36px;
+   }
+
+   .user-name {
+      width: 110px;
+   }
+
+   /* =-=-=-=-=-=-=-=-=-=-=-=-= NAV BAR =-=-=-=-=-=-=-=-=-=-= */
+   .navbar {
+      grid-area: nav;
+      background-color: #4d4c72;
+   }
+
+   #ico-dashboard,
+   #ico-members,
+   #ico-visits,
+   #ico-settings {
+      display: flex;
+      flex-direction: column;
+      height: 35px;
+      width: 100px;
+      min-width: 35px;
+      min-height: 35px;
+      padding-left: 12px;
+      padding-right: 14px;
+      margin: 15px auto 35px auto;
+      opacity: 0.4;
+   }
+
+   #ico-dashboard {
+      border-left: 3px solid #82d67d;
+      border-radius: 3px;
+      opacity: 1;
+   }
+
+   /* =-=-=-=-=-=-=-=-=-=-= ALERT BAR =-=-=-=-=-=-=-=-=-=-= */
+
+   .alert-bar {
+      font-size: 0.9em;
+      line-height: 38px;
+   }
+
+   /* =-=-=-=-=-=-=-=-=-= TAB and SEARCH =-=-=-=-=-=-=-=-= */
+
+   .chart-options {
+      top: 2.2em;
+   }
+
+   .inpt-search {
+      margin-top: 6px;
+   }
+
+   /* =-= SOCIAL STATS =-=-= */
+
+   .ico-twit,
+   .ico-fb,
+   .ico-goog {
+      width: 72px;
+      height: 72px;
+
+      padding: 15px;
+      margin: 15px;
+   }
+
+   /* social media titles inside boxes */
+   .social-media {
+      font-size: 1.2em;
+   }
+
+   /* number inside social media boxes */
+   .num {
+      font-size: 2em;
+
+      margin-top: -15px;
+   }
+
+   /* =-=-=-=-=-=-= NEW MEMBERS =-=-=-=-=-=-=-=-=-=-=-=-= */
+
+   .member-div {
+      grid-template-columns: 20px 75% 5%;
+   }
+
+   .member-avatar {
+      width: 35px;
+      height: 35px;
+   }
+
+   .member-name,
+   .member-comment {
+      font-size: 0.8em;
+   }
+
+   .member-email,
+   .time-ago {
+      font-size: 0.7em;
+   }
+
+   .member-date,
+   .greater-than {
+      font-size: 0.7em;
+   }
+
+   /* =-=-=-=-=-=-= RECENT ACTIVITY =-=-=-=-=-=-=-=-=-=-=-=-= */
+
+   .member-comment {
+      font-size: 0.7em;
+   }
+
+   .greater-than {
+      font-size: 1.5em;
+   }
+
+   /* =-=-=-=-=-=-=-=-=-=-=-=-= MESSAGE USER =-=-=-=-=-=-=-=-=-=-=-= */
+
+   .search-for-user,
+   .message-to-user,
+   .btn-send {
+      font-size: 1em;
+
+      width: 85%;
+
+      padding: 0.5em 0 0.5em 1em;
+
+      border: 1px solid #d1d1d1;
+      margin: 0.4em 0 0.4em 1.5em;
+   }
+
+   .search-results-box {
+      display: none;
+      position: absolute;
+      top: 90px;
+      left: 25px;
+      width: 90%;
+      height: 125px;
+      font-size: 1em;
+      line-height: 1.5em;
+      color: #666;
+      background-color: #fafafa;
+      box-shadow: 0 0 10px #333;
+      border-radius: 5px;
+   }
+
+   .message-to-user {
+      height: 120px;
+      margin-bottom: 0.4em;
+      resize: none;
+   }
+
+   .popup-box {
+      font-size: 1.2em;
+      width: 450px;
+
+      line-height: 32px;
+   }
+
+   .popup-box h1 {
+      font-size: 2em;
+   }
+
+   .save-btn-close,
+   .send-btn-close,
+   .err-btn-close {
+      font-size: 14px;
+   }
+}
+
+/* =-=-=-=-=-=-=-=-= END  =-=-=-=-=-=-=-=-=-=-=-=-= */

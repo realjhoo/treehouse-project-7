@@ -3,6 +3,7 @@
 // GLOBAL VARIABLES
 var first_run_flag = true;
 user_search = document.getElementById("user-box");
+let search_results = document.getElementById("search-results");
 
 // GLOBAL CONSTANTS
 const hourlyLabels = [
@@ -380,15 +381,15 @@ function saveSettings() {
    localStorage.setItem("timezone", timezone);
 }
 
-function showResults(show) {
-   search_results = document.getElementById("search-results");
+// function showResults(show) {
+//    search_results = document.getElementById("search-results");
 
-   if (show == "yes") {
-      search_results.classList.add("visible");
-   } else if (show == "no") {
-      search_results.classList.remove("visible");
-   }
-}
+//    if (show == "yes") {
+//       search_results.classList.add("visible");
+//    } else if (show == "no") {
+//       search_results.classList.remove("visible");
+//    }
+// }
 // =-=-=-=-= EVENT LISTENERS =-=-=-=-=-=-=-=-=-=
 document.addEventListener("click", event => {
    // =-=-=-=-=-= MENU BAR =-=-=-=-=-=-=-=-=-=
@@ -500,6 +501,7 @@ window.addEventListener("resize", event => {
    document.location.reload(true);
 });
 
+// =-=-= AUTOCOMPLETE =-= ENTER, ARROW DOWN and CLEARING BOX
 user_search.addEventListener("keydown", event => {
    const enter = 13,
       arrow_dn = 40;
@@ -512,6 +514,7 @@ user_search.addEventListener("keydown", event => {
 
    if (event.keyCode == arrow_dn) {
       document.getElementById("search-results").focus();
+      document.getElementById("search-results").selectedIndex = "0";
    }
 
    if (event.keyCode != arrow_dn) {
@@ -519,6 +522,7 @@ user_search.addEventListener("keydown", event => {
    }
 });
 
+// =-=-= AUTOCOMPLETE =-= CREATE AND DISPLAY RESULTS
 user_search.addEventListener("keyup", event => {
    const user = [
       "Victoria Chambers",
@@ -535,16 +539,14 @@ user_search.addEventListener("keyup", event => {
       "Oswald Mostly"
    ];
    const enter = 13,
-      arrow_up = 38,
-      arrow_dn = 40,
       backspace = 8,
       a_key = 65,
       z_key = 90;
 
-   let match = [];
    let search_string = user_search.value;
    let search_results = document.getElementById("search-results");
 
+   // if user types letters, search and display
    if (
       (event.keyCode >= a_key && event.keyCode <= z_key) ||
       event.keyCode == backspace
@@ -563,27 +565,49 @@ user_search.addEventListener("keyup", event => {
       } // for loop
    } // if
 
+   // =-=-=-= Cleanup =-=-=-=
    // clear the box if search deleted
    if (user_search.value.length == 0) {
       search_results.options.length = 0;
       search_results.style.display = "none";
    }
 
+   // clear the box if there are no results
+   if (search_results.options.length == 0) {
+      search_results.style.display = "none";
+   }
+
    // select result and hide box if user hits ENTER
    if (event.keyCode == enter) {
-      // place top value in box
+      // check if there is something on top of list
       if (search_results.children[0] != null) {
          user_search.value = search_results.children[0].innerHTML;
       }
-      // user_search.value = "";
-      search_results.style.display = "none";
+      search_results.style.display = "none"; // hide box
    }
-   // after focus is set to search_results
-   // first item should be highlighted
-   // create listener for search_results so that
-   //    it can respond to enetr of click on highlighted item
-   //    arrow up on top shifts focus back to user_search
-   //
+});
+
+// =-=-= AUTOCOMPLETE =-= Allow user to click selection
+search_results.addEventListener("click", event => {
+   // take selected item from search-results and place in user_search
+   user_search.value =
+      search_results.options[search_results.selectedIndex].text;
+   search_results.style.display = "none"; // hide box
+});
+
+// =-=-= AUTOCOMPLETE =-= Allow user to use arrow and enetr keys in results box
+search_results.addEventListener("keyup", event => {
+   const enter = 13,
+      arrow_up = 38;
+
+   // up arrow at top of results box
+   if (event.keyCode == arrow_up && search_results.selectedIndex == 0) {
+      user_search.focus();
+   } else if (event.keyCode == enter) {
+      user_search.value =
+         search_results.options[search_results.selectedIndex].text;
+      search_results.style.display = "none"; // hide box
+   }
 });
 
 window.onload = function() {

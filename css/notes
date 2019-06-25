@@ -1,26 +1,9 @@
 TODO
 
-
-    Search for user box - add autocomplete
-
-    AUTOCOMPLETE NOTES =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    states example
-    str = str.lowerCase(); // convert state name to lowerCase
-    for (var i= 0; i < states.length; i++){
-        if (states[i].toLowerCase().startsWith(str)) {
-            $(".dialog").append("<div>" + states[i] + "</div>);
-            // jquerey... need plain js for this line
-            cat string and add to list to display
-        }
-    }
-    // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-    Make mobile friendly with media queries (ugh)
-        320 - 768 - 1024
-        Ideas
-        Replace side nav bar with hamburger menu
-        reduce base em from 16 to 14 or 12
-        stacked grid at 320px
+BUGS:
+Recent Activity right-margin
+Mouseover chart
+Possibly avatar position at 320px
 
 
 GET PEER HELP ON LINE CHART ISSUE
