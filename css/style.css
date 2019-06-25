@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Exo:400,700");
 
-/* 320px  768px and 1024px */
-
 /* =-=-=-=-=-=-=-=-=-=-= GENERAL RULES =-=-=-=-=-=-=-=-=-=-=-=-= */
 * {
    box-sizing: border-box;
@@ -19,16 +17,15 @@ a {
 }
 
 p {
+   font-size: 0.9em;
    text-transform: uppercase;
    padding: 5px 0px 5px 25px;
-
-   font-size: 0.9em;
 }
 
 /* =-=-=-=-=-=-=-=-=-=-= GRID CONTAINER =-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 .grid-container {
    display: grid;
-   grid-auto-columns: 100px 1fr 1fr;
+   grid-auto-columns: 1fr 1fr 1fr;
    grid-auto-rows: auto;
    grid-template-areas:
       "head head head"
@@ -774,7 +771,6 @@ hr {
 
    .grid-container {
       grid-auto-columns: 80px 1fr 1fr;
-
       grid-template-areas:
          "head head head"
          "nav tab search"
@@ -812,7 +808,6 @@ hr {
 
    .ico-bell {
       font-size: 1em;
-
       margin-right: 10px;
    }
 
@@ -965,7 +960,6 @@ hr {
    .popup-box {
       font-size: 14px;
       width: 365px;
-
       line-height: 28px;
    }
 
@@ -993,7 +987,6 @@ hr {
 
    .ico-bell {
       font-size: 1.2em;
-
       margin-top: 0;
    }
 
@@ -1024,16 +1017,13 @@ hr {
    #ico-members,
    #ico-visits,
    #ico-settings {
-      display: flex;
       flex-direction: column;
       height: 35px;
       width: 100px;
       min-width: 35px;
       min-height: 35px;
-      padding-left: 12px;
       padding-right: 14px;
       margin: 15px auto 35px auto;
-      opacity: 0.4;
    }
 
    #ico-dashboard {
@@ -1066,7 +1056,6 @@ hr {
    .ico-goog {
       width: 72px;
       height: 72px;
-
       padding: 15px;
       margin: 15px;
    }
@@ -1079,7 +1068,6 @@ hr {
    /* number inside social media boxes */
    .num {
       font-size: 2em;
-
       margin-top: -15px;
    }
 
@@ -1121,44 +1109,9 @@ hr {
 
    /* =-=-=-=-=-=-=-=-=-=-=-=-= MESSAGE USER =-=-=-=-=-=-=-=-=-=-=-= */
 
-   .search-for-user,
-   .message-to-user,
-   .btn-send {
-      font-size: 1em;
-
-      width: 85%;
-
-      padding: 0.5em 0 0.5em 1em;
-
-      border: 1px solid #d1d1d1;
-      margin: 0.4em 0 0.4em 1.5em;
-   }
-
-   .search-results-box {
-      display: none;
-      position: absolute;
-      top: 90px;
-      left: 25px;
-      width: 90%;
-      height: 125px;
-      font-size: 1em;
-      line-height: 1.5em;
-      color: #666;
-      background-color: #fafafa;
-      box-shadow: 0 0 10px #333;
-      border-radius: 5px;
-   }
-
-   .message-to-user {
-      height: 120px;
-      margin-bottom: 0.4em;
-      resize: none;
-   }
-
    .popup-box {
       font-size: 1.2em;
       width: 450px;
-
       line-height: 32px;
    }
 
@@ -1172,5 +1125,4 @@ hr {
       font-size: 14px;
    }
 }
-
 /* =-=-=-=-=-=-=-=-= END  =-=-=-=-=-=-=-=-=-=-=-=-= */

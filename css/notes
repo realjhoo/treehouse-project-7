@@ -1,3 +1,10 @@
+Position
+Display
+text
+color
+Padding/Border/margin
+other
+
 TODO
 
 BUGS:
@@ -78,3 +85,13 @@ SCRAPS
 }
 
  <textarea class="results-box" id="results-box"></textarea>
+
+ // function showResults(show) {
+//    search_results = document.getElementById("search-results");
+
+//    if (show == "yes") {
+//       search_results.classList.add("visible");
+//    } else if (show == "no") {
+//       search_results.classList.remove("visible");
+//    }
+// }

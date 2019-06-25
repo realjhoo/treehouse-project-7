@@ -381,15 +381,6 @@ function saveSettings() {
    localStorage.setItem("timezone", timezone);
 }
 
-// function showResults(show) {
-//    search_results = document.getElementById("search-results");
-
-//    if (show == "yes") {
-//       search_results.classList.add("visible");
-//    } else if (show == "no") {
-//       search_results.classList.remove("visible");
-//    }
-// }
 // =-=-=-=-= EVENT LISTENERS =-=-=-=-=-=-=-=-=-=
 document.addEventListener("click", event => {
    // =-=-=-=-=-= MENU BAR =-=-=-=-=-=-=-=-=-=
@@ -595,7 +586,7 @@ search_results.addEventListener("click", event => {
    search_results.style.display = "none"; // hide box
 });
 
-// =-=-= AUTOCOMPLETE =-= Allow user to use arrow and enetr keys in results box
+// =-=-= AUTOCOMPLETE =-= Allow user to use arrow and enter keys in results box
 search_results.addEventListener("keyup", event => {
    const enter = 13,
       arrow_up = 38;
@@ -610,6 +601,7 @@ search_results.addEventListener("keyup", event => {
    }
 });
 
+// =-=-=-=-= Fix navbar quirk =-=-=-=
 window.onload = function() {
    if (first_run_flag) {
       first_run_flag = false;
