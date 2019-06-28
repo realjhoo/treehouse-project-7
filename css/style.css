@@ -8,6 +8,10 @@
    font-family: "Exo", sans-serif;
 }
 
+canvas {
+   max-width: 100%;
+}
+
 body {
    color: #666;
 }
@@ -158,10 +162,11 @@ hr {
    height: 20px;
    width: 20px;
    border-radius: 50%;
+   margin-right: 10px;
 }
 
 .user-name {
-   visibility: hidden;
+   display: none;
    width: 30px;
    padding-left: 0;
 }
@@ -543,6 +548,14 @@ hr {
    margin: 0.4em 0 0.4em 1.5em;
 }
 
+.search-for-user {
+   background-image: url("/images/mag-glass.png");
+   background-size: 18px;
+   background-repeat: no-repeat;
+   background-position: right;
+   background-position-x: calc(100% - 10px);
+}
+
 ::placeholder {
    color: #bbbbbb;
 }
@@ -829,10 +842,11 @@ hr {
    .avatar {
       height: 1.4em;
       width: 1.4em;
+      margin-right: 0;
    }
 
    .user-name {
-      visibility: visible;
+      display: block;
       width: 92px;
       font-size: 0.6em;
       padding-left: 10px;
