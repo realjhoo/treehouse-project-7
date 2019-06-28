@@ -100,7 +100,7 @@ function createLineChart(chrtLabels, chrtData) {
    let pointBGcolor = "rgb(240,240,240)";
    let ctx = document.getElementById("lineChart").getContext("2d");
 
-   let lineChart = new Chart(ctx, {
+   lineChart = new Chart(ctx, {
       type: "line",
       data: {
          labels: chartLabel,
@@ -123,14 +123,9 @@ function createLineChart(chrtLabels, chrtData) {
                {
                   ticks: {
                      beginAtZero: false
-                     // stepValue: 500,
-                     // startVale: 500,
-                     // max: 2500,
-                     // min: 500
                   }
                }
-            ],
-            xAxes: [{}] //remove if empty when done
+            ]
          },
          maintainAspectRatio: false,
          legend: {
@@ -413,18 +408,22 @@ document.addEventListener("click", event => {
    // +++ HOURLY +++
    let selectChart = event.target.innerText;
    if (selectChart == "Hourly") {
+      lineChart.destroy();
       createLineChart(hourlyLabels, hourlyData);
    }
    // +++ DAILY +++
    if (selectChart == "Daily") {
+      lineChart.destroy();
       createLineChart(dailyLabels, dailyData);
    }
    // +++ WEEKLY +++
    if (selectChart == "Weekly") {
+      lineChart.destroy();
       createLineChart(weeklyLabels, weeklyData);
    }
    // +++ MONTHLY +++
    if (selectChart == "Monthly") {
+      lineChart.destroy();
       createLineChart(monthlyLabels, monthlyData);
    }
 
@@ -546,9 +545,6 @@ user_search.addEventListener("keyup", event => {
 
       for (i = 0; i < user.length; i++) {
          if (user[i].includes(search_string)) {
-            // +++++++++++++++++++++++++++++++++++++++++++++++++++++
-            console.log("User " + i + ": " + user[i]);
-            // +++++++++++++++++++++++++++++++++++++++++++++++++++++
             option = document.createElement("OPTION");
             option.innerHTML = user[i];
             search_results.appendChild(option);
